@@ -31,16 +31,18 @@ where $\phi$ is the null event.
 
 **(2)** $$P(\cup_{i=1}^{n} A_i)=\sum_{i=1}^{n}P(A_i)-\sum_{i<j}P(A_i\cap A_j)+\sum_{i<j<k}P(A_i\cap A_j\cap A_k)-\cdots+(-1)^{n+1}P(\cap_{i=1}^{n}A_i)$$
 
-where $P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1})$.
-
+where 
+$$
+P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1}).
+$$
 
 - $P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)$
 
-$\Rightarrow$ (Bayes' Theorem)$$\frac{P(A\mid B)P(A)}{P(B)}$$
+$\Rightarrow$ (Bayes' Theorem)
 
-if $P(B)>0$
- 
-What is $P(A\mid B)$?
+$$P(A\mid B)=\frac{P(A\mid B)P(A)}{P(B)}$$
+
+What is $P(A\mid B)$ if $P(B)>0$?
 
 Conditional probability: update prob./beliefs/uncertainty based on new evidence.
 
@@ -365,7 +367,12 @@ $$E(Z^2)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}z^2e^{-\frac{z^2}{2}}\mathr
 Let 
 $$
 \begin{aligned}
-u=z\Rightarrow \mathrm{d}u=\mathrm{d}z\\
+u=z\Rightarrow \mathrm{d}u=\mathrm{d}z
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
 v=-e^{-\frac{z^2}{2}}\Rightarrow \mathrm{d}v=ze^{-\frac{z^2}{2}}\mathrm{d}z
 \end{aligned}
 $$
@@ -605,16 +612,30 @@ We will show that the MGF of $\frac{S_n}{\sqrt{n}}$ converges to the MGF of $N(0
 
 $$M(t)=E(e^{tS_n/\sqrt{n}})=E(e^{tx_1/\sqrt{n}})\cdots E(e^{tx_n/\sqrt{n}})=[M(\frac{t}{\sqrt{n}})]^n$$
 
+Taking the log
 $$
 \begin{aligned}
 &\lim_{n\rightarrow\infty}n\ln M(\frac{t}{\sqrt{n}})\\
-&=\lim_{n\rightarrow\infty}\frac{\ln M(\frac{t}{\sqrt{n}})}{\frac{1}{n}}\\
-\text{Let}\space y=\frac{1}{\sqrt{n}}\\
-&=\lim_{y\rightarrow 0}\frac{\ln M(yt)}{y^2}\\
-\text{L' Hopital's}\\
+&=\lim_{n\rightarrow\infty}\frac{\ln M(\frac{t}{\sqrt{n}})}{\frac{1}{n}}
+\end{aligned}
+$$
+Let $y=\frac{1}{\sqrt{n}}$
+$$
+\begin{aligned}
+&=\lim_{y\rightarrow 0}\frac{\ln M(yt)}{y^2}
+\end{aligned}
+$$
+L' Hopital's
+$$
+\begin{aligned}
 &=\lim_{y\rightarrow 0}\frac{tM'(yt)}{2yM(yt)}\\
-&=\frac{t}{2}\lim_{y\rightarrow 0}\frac{M'(yt)}{y}\\
-\text{Since}\space M(0)=1,\space M'(0)=0,\space\text{L' Hopital's}\\
+&=\frac{t}{2}\lim_{y\rightarrow 0}\frac{M'(yt)}{y}
+\end{aligned}
+$$
+
+Since $M(0)=1$, $M'(0)=0$, L' Hopital's
+$$
+\begin{aligned}
 &=\frac{t^2}{2}\lim_{y\rightarrow 0}\frac{M''(yt)}{1}\\
 &=\frac{t^2}{2}
 \end{aligned}
