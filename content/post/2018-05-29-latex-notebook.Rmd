@@ -49,37 +49,3 @@ $\frac{x}{2}\bigg\rvert_a^b$
 ``
 \frac{x}{2}\bigg\rvert_a^b
 ``
-
-$$
-\begin{aligned}
-J=
-\begin{vmatrix}
-    a & b \\ 
-    c & d
-  \end{vmatrix}
-\end{aligned}
-$$
-``
-\begin{aligned}
-J=
-\begin{vmatrix}
-    a & b \\ 
-    c & d
-  \end{vmatrix}
-\end{aligned}
-``
-
-$$
-f(x) =
-\begin{cases}
-c, & a\leqslant x\leqslant b \\
-0, & \text{otherwise}
-\end{cases}
-$$
-``
-f(x) =
-\begin{cases}
-c, & a\leqslant x\leqslant b \\
-0, & \text{otherwise}
-\end{cases}
-``
