@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Hugo website</title>
+    <link>/</link>
+    <description>Recent content on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Latex Notebook</title>
+      <link>/2018/05/29/latex-notebook/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/29/latex-notebook/</guid>
+      <description>Mthematical Notation\(\leqslant\) \leqslant
+\(\sim\) \sim
+\(\equiv\) \equiv
+\(\binom{n}{k}\) \binom{n}{k}
+\(\mathbb{R}\) \mathbb{R}
+\(\mathscr{L}\) \mathscr{L}
+\(\mathrm{d}x\) \mathrm{d}x
+\(\frac{x}{2}\bigg\rvert_a^b\) \frac{x}{2}\bigg\rvert_a^b
+\[\begin{aligned}J=\begin{vmatrix}a &amp;amp; b \\ c &amp;amp; d\end{vmatrix}\end{aligned}\] \begin{aligned} J= \begin{vmatrix} a &amp;amp; b \\ c &amp;amp; d \end{vmatrix} \end{aligned}
+\[f(x) =\begin{cases}c, &amp;amp; a\leqslant x\leqslant b \\0, &amp;amp; \text{otherwise}\end{cases}\] f(x) = \begin{cases} c, &amp;amp; a\leqslant x\leqslant b \\ 0, &amp;amp; \text{otherwise} \end{cases}</description>
+    </item>
+    
+    <item>
+      <title>R Notebook</title>
+      <link>/2018/05/29/r-notebook/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/29/r-notebook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Classical Mechanics</title>
+      <link>/2018/05/28/classical-mechanics/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/28/classical-mechanics/</guid>
+      <description>Principle of Least Action (\(\delta A=0\))For arbitary function \(A(x,y)\), \(1^{st}\) order changes in \(A(x,y)\) is
+\[\delta A(x,y)=\frac{\partial A}{\partial x}\delta A+\frac{\partial A}{\partial y}\delta y\] At stationary point, the derivative of \(A\) with repect to \(x_i\) vanishes:
+\[\frac{\partial A}{\partial x_i}=0\]
+for all \(x_i\).
+Then the condition that \(A\) is stationary is
+\[\delta A=0\]
+def \[A=\int_{t_1}^{t_2}\mathscr{L}\mathrm{d}t\]
+where \[\mathscr{L}=\mathscr{L}(q_i,\dot q_i)\]
+The condiction for a stationary action is \[\delta A=0\]
+\[\begin{aligned}\Rightarrow &amp;amp;\int_{t_1}^{t_2}\delta\mathscr{L}\mathrm{d}t=0\\&amp;amp;=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i+\frac{\partial\mathscr{L}}{\partial \dot q_i}\delta\dot q_i)\mathrm{d}t\\&amp;amp;=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i\mathrm{d}t+\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial\dot q_i}\frac{\mathrm{d}\delta q_i}{\mathrm{d}t}\mathrm{d}t\\&amp;amp;=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\mathrm{d}t+\frac{\partial\mathscr{L}}{\partial\dot q_i}\delta q_i\bigg\rvert_{t_1}^{t_2}-\int_{t_1}^{t_2}\delta q_i\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i}\mathrm{d}t\end{aligned}\] \(\delta q_i\) vanished at the ends of the path (\(\delta q_i(t_1)=\delta q_i(t_2)=0\))</description>
+    </item>
+    
+    <item>
+      <title>Probability and Statistics</title>
+      <link>/2018/05/24/probability-and-statistics/</link>
+      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/24/probability-and-statistics/</guid>
+      <description>Comemts:
+“Statistics is the study of uncertainty.”
+Fundamental concepts in probability and statisticsA sample space \(S\)
+An event \(A \subseteq S\)
+Axions
+(0) \[P(A) \in [0,1]\]
+(1) \[P(\phi)=0\] \[P(S)=1\]
+where \(\phi\) is the null event.
+(2) \[P(\cup_{i=1}^{n} A_i)=\sum_{i=1}^{n}P(A_i)-\sum_{i&amp;lt;j}P(A_i\cap A_j)+\sum_{i&amp;lt;j&amp;lt;k}P(A_i\cap A_j\cap A_k)-\cdots+(-1)^{n+1}P(\cap_{i=1}^{n}A_i)\]
+where \(P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1})\).
+\(P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)\)\(\Rightarrow\) (Bayes’ Theorem)\[\frac{P(A\mid B)P(A)}{P(B)}\]
+if \(P(B)&amp;gt;0\)
+What is \(P(A\mid B)\)?
+Conditional probability: update prob.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/about/</guid>
+      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+    </item>
+    
+  </channel>
+</rss>

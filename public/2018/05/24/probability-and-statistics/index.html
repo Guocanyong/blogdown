@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.41" />
+
+
+<title>Probability and Statistics - A Hugo website</title>
+<meta property="og:title" content="Probability and Statistics - A Hugo website">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/Guocanyong/blogdown">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">5 min read</span>
+    
+
+    <h1 class="article-title">Probability and Statistics</h1>
+
+    
+    <span class="article-date">2018/05/24</span>
+    
+
+    <div class="article-content">
+      <p>Comemts:</p>
+<p><strong>“Statistics is the study of uncertainty.”</strong></p>
+<div id="fundamental-concepts-in-probability-and-statistics" class="section level1">
+<h1>Fundamental concepts in probability and statistics</h1>
+<ul>
+<li><p>A sample space <span class="math inline">\(S\)</span></p></li>
+<li><p>An event <span class="math inline">\(A \subseteq S\)</span></p></li>
+</ul>
+<p>Axions</p>
+<p><strong>(0)</strong> <span class="math display">\[P(A) \in [0,1]\]</span></p>
+<p><strong>(1)</strong> <span class="math display">\[P(\phi)=0\]</span> <span class="math display">\[P(S)=1\]</span></p>
+<p>where <span class="math inline">\(\phi\)</span> is the null event.</p>
+<p><strong>(2)</strong> <span class="math display">\[P(\cup_{i=1}^{n} A_i)=\sum_{i=1}^{n}P(A_i)-\sum_{i&lt;j}P(A_i\cap A_j)+\sum_{i&lt;j&lt;k}P(A_i\cap A_j\cap A_k)-\cdots+(-1)^{n+1}P(\cap_{i=1}^{n}A_i)\]</span></p>
+<p>where <span class="math inline">\(P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1})\)</span>.</p>
+<ul>
+<li><span class="math inline">\(P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)\)</span></li>
+</ul>
+<p><span class="math inline">\(\Rightarrow\)</span> (Bayes’ Theorem)<span class="math display">\[\frac{P(A\mid B)P(A)}{P(B)}\]</span></p>
+<p>if <span class="math inline">\(P(B)&gt;0\)</span></p>
+<p>What is <span class="math inline">\(P(A\mid B)\)</span>?</p>
+<p>Conditional probability: update prob./beliefs/uncertainty based on new evidence.</p>
+<p><strong>“Conditioning is the Soul of Statistics”.</strong></p>
+<ul>
+<li><span class="math inline">\(P(A\cup B)=P(A)+P(B\cap A^c)=P(A)+P(B)-P(B\cap A)\)</span></li>
+</ul>
+<p><span class="math inline">\(\Rightarrow\)</span> (Law of total Prob.) <span class="math display">\[P(B)=P(B\cap A)+P(B\cap A^c)\]</span></p>
+<p>In generally</p>
+<p><span class="math display">\[P(B)=\sum_iP(B\cap A_i)=\sum_i P(B\mid A_i)P(A_i)\]</span></p>
+</div>
+<div id="random-variables-and-related-concepts" class="section level1">
+<h1>Random variables and related concepts</h1>
+<p>R. V. is a very important concept in probability theory.</p>
+<p>What is a r. v.?</p>
+<p>It’s a measureable function maps a subset in samples space into a number in <span class="math inline">\(\mathbb{R}\)</span>. Think of it as a numberical “summary” of an aspect of the experiment.</p>
+<p>For discrete r. v.</p>
+<p>def <strong>probability mass function</strong> (PMF)</p>
+<p><span class="math display">\[f(x)=P(X=x)\]</span></p>
+<ul>
+<li><span class="math inline">\(P(X=x)\geqslant 0\)</span></li>
+<li><span class="math inline">\(\sum_{x=0}^nP(X=x)=1\)</span></li>
+</ul>
+<p>def <strong>cumulative distribution function</strong> (CDF)</p>
+<p><span class="math display">\[F(X)=P(X\leqslant x)\]</span></p>
+<ul>
+<li><span class="math inline">\(\lim_{x\rightarrow-\infty}F(x)=0\)</span></li>
+<li><span class="math inline">\(\lim_{x\rightarrow+\infty}F(x)=1\)</span></li>
+</ul>
+<p>def <strong>expected value</strong></p>
+<p><span class="math display">\[E(X)=\sum xP(X=x)\]</span></p>
+<p>For continuous r. v.</p>
+<p>def <strong>probability density function</strong> (PDF)</p>
+<p><span class="math display">\[\int_{a}^{b}f_X(x)\mathrm{d}x=P(a\leqslant X\leqslant b)\]</span></p>
+<ul>
+<li><span class="math inline">\(f_X(x)\geqslant 0\)</span></li>
+<li><span class="math inline">\(\int_{-\infty}^{\infty}f_X(x)=1\)</span></li>
+</ul>
+<p>def <strong>CDF</strong></p>
+<p><span class="math display">\[F(X)=\int_{-\infty}^{x}f_X(x)\mathrm{d}x=P(X\leqslant x)\]</span></p>
+<p>def <strong>expected value</strong></p>
+<p><span class="math display">\[E(X)=\int_{-\infty}^{\infty}xf_X(x)\mathrm{d}x\]</span></p>
+<p><strong>Law of the Unconscions Statistician</strong> (LOTUS)</p>
+<p><span class="math display">\[E(g(X))=\int_{-\infty}^{\infty}g(x)f_X(x)\mathrm{d}x\]</span></p>
+<p>This alllows us to determine the expected value of any function of <span class="math inline">\(X\)</span> without knowing its distribution.</p>
+<p>def <strong>moment-generating function</strong> (MGF)</p>
+<p><span class="math display">\[M(t)=E(e^{tX})=E(\sum_{n=0}^{\infty}\frac{X^{n}t^n}{n!})=\sum_{n=0}^{\infty}E(X^n)\frac{t^n}{n!}\]</span></p>
+<p>where <span class="math inline">\(E(X^{n})\)</span> is called <span class="math inline">\(n\)</span>-th moment.</p>
+<p>MGF is defined to compute the expected value of any power of <span class="math inline">\(X\)</span>.</p>
+<p>Why is MGF important?</p>
+<ul>
+<li>The <span class="math inline">\(n\)</span>-th moment, <span class="math inline">\(E(X^n)\)</span> is coef. of <span class="math inline">\(\frac{t^n}{n!}\)</span> in Taylor series of <span class="math inline">\(M(t)\)</span>.</li>
+</ul>
+<p><span class="math display">\[M^{n}(0)=\frac{\mathrm{d}^n}{\mathrm{d}t^t}M(t)\vert_{t=0}=E(X^{n})\]</span></p>
+<ul>
+<li><p>MGF determines the distribution. E.g. if <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> has same MGF, then they have same CDF.</p></li>
+<li><p>If <span class="math inline">\(X\)</span> has MGF <span class="math inline">\(M_x\)</span>, <span class="math inline">\(Y\)</span> has MGF <span class="math inline">\(M_y\)</span>, X is indep. of <span class="math inline">\(Y\)</span>, then MGF of <span class="math inline">\(X+Y\)</span> is <span class="math display">\[E(e^{t(X+Y)})=E(e^{tX})E(e^{tY})=M_x(t)M_y(t)\]</span></p></li>
+</ul>
+<p>def <strong>variance</strong> <span class="math display">\[Var(X)=E((X-EX)^2)=E(X^2+(EX)^2-2X(EX))=E(X^2)-(EX)^2\]</span></p>
+<p>def <strong>covariance</strong> <span class="math display">\[Cov(X,Y)=E[(X-EX)(Y-EY)]=E[XY+(EX)(EY)-X(EY)-Y(EX)]=E(XY)-(EX)(EY)\]</span></p>
+<p>If <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> are indep., then <span class="math display">\[E(XY)=E(X)E(Y)\]</span> then <span class="math display">\[Cov(X,Y)=0\]</span></p>
+<p>Expected value function is linear.</p>
+<ul>
+<li><span class="math inline">\(E(X+Y)=E(X)E(Y)\)</span></li>
+<li><span class="math inline">\(E(cX)=cE(X)\)</span></li>
+</ul>
+<p>more generally</p>
+<p><span class="math display">\[E(\sum_{i}^{n}X_i)=\sum_{i}^{n}E(x_i)\]</span> This holds true even though the <span class="math inline">\(X_i\)</span> are dependent.</p>
+<p>Variance is not linear.</p>
+<ul>
+<li><span class="math inline">\(Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)\)</span></li>
+<li><span class="math inline">\(Var(cX)=c^2Var(X)\)</span></li>
+</ul>
+<p>more generally</p>
+<p><span class="math display">\[Var(\sum X)=\sum Var(X)+2\sum_{i&lt;j}Cov(X_i,X_j)\]</span></p>
+</div>
+<div id="random-variables-and-their-distributions" class="section level1">
+<h1>Random Variables and Their distributions</h1>
+<p><strong>Bernoulli distribution</strong>: <span class="math inline">\(X\)</span> has only tow possible vaues, 0 and 1.</p>
+<p>Let <span class="math inline">\(X\sim Bern(p)\)</span></p>
+<p>PMF:</p>
+<ul>
+<li><span class="math inline">\(P(X=1)=p\)</span></li>
+<li><span class="math inline">\(P(X=0)=1-p\)</span></li>
+</ul>
+<p><span class="math display">\[E(X)=\sum_x xP(X=x)=1\times p+0\times(1-p)=p\]</span></p>
+<p><span class="math display">\[E(X^2)=1^2\times p+0^2\times(1-p)=p\]</span></p>
+<p><span class="math display">\[Var(X)=E(X^2)-(EX)^2=p-p^2=p(1-p)=pq\]</span></p>
+<p>MGF:</p>
+<p><span class="math display">\[M(t)=E(e^{tX})=e^{t\cdot 0}q+e^{t\cdot 1}p=q+pe^t\]</span></p>
+<p><strong>Binomial distribution</strong>: <span class="math inline">\(n\)</span> indep. <span class="math inline">\(Bern(P)\)</span> trials</p>
+<p>Let <span class="math inline">\(X\sim Bin(n,p)\)</span></p>
+<p>PMF: <span class="math display">\[P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}\]</span></p>
+<p>where <span class="math inline">\(0\leqslant k\leqslant n\)</span>.</p>
+<p>We can write <span class="math inline">\(X=X_1+\cdots+X_n\)</span>, where <span class="math inline">\(X_i\)</span> are i.i.d. <span class="math inline">\(Bern(p)\)</span></p>
+<p><span class="math display">\[E(X)=nE(X_i)=np\space\text{(by linearity)}\]</span></p>
+<p><span class="math inline">\(X^2=X_1^2+\cdots+X_n^2+2X_1X_2+\cdots+2X_{n-1}X_{n}\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+ E(X^2)&amp;=nE(X_1^2)+2\binom{n}{2}E(X_1X_2) \\
+ &amp;=nE(X_1)^2+2\binom{n}{2}E(X_1)E(X_2)\space\text{(by indep.)}\\
+ &amp;=np^2+n(n-1)p^2
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(Var(X)=E(X^2)-(EX)^2=npq\)</span></p>
+<p><span class="math inline">\(M(t)=(q+pe^t)^n\)</span></p>
+<p><strong>Geometric distribution</strong>: Count number of failures before first success.</p>
+<p>Let <span class="math inline">\(X\sim Geom(p)\)</span></p>
+<p>PMF: <span class="math display">\[P(X=k)=q^kp\]</span> for <span class="math inline">\(k\in\mathbb{N}\)</span>.</p>
+<p><span class="math display">\[EX=0\cdot p+(1+EX)q\space\text{(trick)}\]</span></p>
+<p><span class="math display">\[\Rightarrow EX=\frac{q}{p}\]</span></p>
+<p><span class="math display">\[Var(X)=\frac{q}{p^2}\]</span></p>
+<p><strong>Hypergeometric distribution</strong>: Have <span class="math inline">\(b\)</span> black, <span class="math inline">\(w\)</span> white marbles. Pick simple random ample of size <span class="math inline">\(n\)</span>. Find dist. of number of white marbles in sample.</p>
+<p>Let <span class="math inline">\(X\sim HGeom(w,b,n)\)</span>, <span class="math inline">\(p=\frac{w}{w+b}\)</span>, <span class="math inline">\(w+b=N\)</span></p>
+<p><span class="math display">\[P(X=k)=\frac{\binom{w}{k}\binom{b}{n-k}}{\binom{w+b}{n}}\]</span></p>
+<p>where <span class="math inline">\(0\leqslant k\leqslant w\)</span>, <span class="math inline">\(0\leqslant n-k\leqslant b\)</span>.</p>
+<p>Vandermonde’s Identity <span class="math display">\[\sum_{k=0}^{w}P(X=k)=1\]</span> <span class="math display">\[\begin{aligned}
+Var(\sum_{j=1}^{n}X_j)&amp;=Var(X_1)+\cdots+Var(X_n)+2\sum_{i&lt;j}Cor(X_i+X_j) \\
+&amp;=npq+2\binom{n}{2}(\frac{w}{N}\frac{w-1}{N-1}-p^2) \\
+&amp;=\frac{N-n}{N-1}npq
+\end{aligned}
+\]</span></p>
+<p><strong>Posson distribution</strong>:</p>
+<p>Let <span class="math inline">\(X\sim Pois(\lambda)\)</span></p>
+<p>PMF: <span class="math display">\[P(X=k)=e^{-\lambda}\frac{\lambda^{k}}{k!}\]</span> where <span class="math inline">\(k\in\mathbb{N}\)</span>. We call <span class="math inline">\(\lambda\)</span> the rate parameter, <span class="math inline">\(\lambda &gt;0\)</span>.</p>
+<p>Valid: <span class="math inline">\(\sum_{k=0}^{n}P(X=k)=\sum_{k=0}^{n}e^{-\lambda}\frac{\lambda^{k}}{k!}=e^{-\lambda}e^{\lambda}=1\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+E(X)&amp;=e^{-\lambda}\sum_{k=0}^{n}k\frac{\lambda^k}{k!}\\
+&amp;=e^{-\lambda}\sum_{k=1}^{n}k\frac{\lambda^k}{k!}\\
+&amp;=\lambda e^{-\lambda}\sum_{k-1=0}^{n}\frac{\lambda^{k-1}}{(k-1)!}\\
+&amp;=\lambda e^{-\lambda}e^{\lambda}\\
+&amp;=\lambda
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(E(X^2)=e^{-\lambda}\sum_{k=0}^{\infty}k^2\frac{\lambda^k}{k!}\)</span></p>
+<p>Since <span class="math display">\[e^{\lambda}=\sum_{k=0}^{\infty}\frac{\lambda^k}{k!}\]</span></p>
+<p>Taking the derivative w.r.t. <span class="math inline">\(\lambda\)</span>, <span class="math display">\[e^{\lambda}=\sum_{k=1}^{\infty}\frac{k\lambda^{k-1}}{k!}\]</span></p>
+<p><span class="math display">\[\lambda e^{\lambda}=\sum_{k=1}^{\infty}\frac{k\lambda^k}{k!}\]</span></p>
+<p>Repeating, <span class="math display">\[\lambda e^{\lambda}+e^{\lambda}=\sum_{k=1}^{\infty}\frac{k^2\lambda^{k-1}}{k!}\]</span></p>
+<p><span class="math display">\[\lambda(\lambda+1)e^{\lambda}=\sum_{k=1}^{\infty}\frac{k^2\lambda^k}{k!}\]</span></p>
+<p><span class="math inline">\(E(X^2)=\lambda^2+\lambda\)</span></p>
+<p><span class="math inline">\(Var(X)=E(X^2)-(EX)^2=\lambda\)</span></p>
+<p>MGF: <span class="math display">\[
+M(t)=E(e^{tX})
+=\sum_{k}^{\infty}e^{tk}e^{-\lambda}\frac{\lambda^k}{k!}
+=e^{-\lambda}\sum_{k=0}^{\infty}\frac{(\lambda e^t)^k}{k!}
+=e^{-\lambda}e^{\lambda e^t}
+\]</span></p>
+<p><strong>Uniform distribution</strong>: competely random position in <span class="math inline">\([a,b]\)</span></p>
+<p>Let <span class="math inline">\(U\sim Unif(a,b)\)</span></p>
+<p>PDF</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+c, &amp; a\leqslant x\leqslant b \\
+0, &amp; \text{otherwise}
+\end{cases}
+\]</span> Find <span class="math inline">\(c\)</span>: <span class="math display">\[\int_a^b c\mathrm{d}x=1\Rightarrow c=\frac{1}{b-a}\]</span> CDF <span class="math display">\[F(x)=\int_{x}^{\infty}f(t)\mathrm{d}t=\int_{x}^{a}\frac{1}{b-a}\mathrm{d}t=\frac{x-a}{b-a}\]</span></p>
+<p><span class="math display">\[E(U)=\int_a^{b}\frac{x\mathrm{d}x}{b-a}=\frac{x^2}{2(b-a)}\bigg\rvert_a^b=\frac{a+b}{2}\]</span> This is the midpoint of the interval <span class="math inline">\([a,b]\)</span>.</p>
+<p><span class="math display">\[E(U^2)=\int_{-\infty}^{\infty}x^2f(x)\mathrm{d}x
+=\int_a^b\frac{x^2}{b-a}\mathrm{d}x
+=\frac{x^3}{3(b-a)}\bigg\rvert_a^b
+=\frac{b^3-a^3}{3(b-a)}\]</span></p>
+<p><span class="math display">\[Var(U)=E(X^2)-(EX)^2\]</span></p>
+<p><strong>Standard uniform distribution</strong>:</p>
+<p>Let <span class="math inline">\(U\sim Unif(0,1)\)</span></p>
+<p><span class="math inline">\(E(U)=\frac{1}{2}\)</span></p>
+<p><span class="math inline">\(E(U^2)=\frac{1}{3}\)</span></p>
+<p><span class="math inline">\(Var(U)=\frac{1}{3}-\frac{1}{4}=\frac{1}{12}\)</span></p>
+<p><strong>Standard normal distribution</strong>:</p>
+<p>Let <span class="math inline">\(Z\sim N(0,1)\)</span></p>
+<p>PDF <span class="math display">\[f(z)=ce^{-z^2/2}\]</span></p>
+<p>Find <span class="math inline">\(c\)</span>: Suppose <span class="math display">\[
+\begin{aligned}
+&amp;x(r,\theta)=r\cos\theta\\
+&amp;y(r,\theta)=r\sin\theta
+\end{aligned}
+\]</span> Jocobian <span class="math display">\[
+\begin{aligned}
+J(r,\theta)=
+\begin{vmatrix}
+    \frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial\theta} \\ 
+    \frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial\theta}
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+  \cos\theta &amp; -r\sin\theta\\
+  \sin\theta &amp; r\cos\theta
+  \end{vmatrix}
+  =
+  r
+\end{aligned}
+\]</span> Therefore, <span class="math inline">\(\mathrm{d}x\mathrm{d}y=r\mathrm{d}r\mathrm{d}\theta\)</span> <span class="math display">\[
+\begin{aligned}
+&amp;\int_{-\infty}^{\infty}e^{-\frac{x^2}{2}}\mathrm{d}x\int_{-\infty}^{\infty}e^{-\frac{y^2}{2}}\mathrm{d}y\\
+=&amp;\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-\frac{(x^2+y^2)}{2}}\mathrm{d}x\mathrm{d}y\\
+=&amp;\int_{0}^{2\pi}\int_{0}^{\infty}e^{-\frac{r^2}{2}}\mathrm{d}r\mathrm{d}\theta
+\end{aligned}
+\]</span> Substituting <span class="math inline">\(u=\frac{r^2}{2}\)</span>, <span class="math inline">\(\mathrm{d}u=r\mathrm{d}r\)</span></p>
+<p><span class="math display">\[
+=\int_0^{2\pi}\int_0^{\infty}e^{-u}\mathrm{d}u\mathrm{d}\theta=\int_0^{2\pi}\mathrm{d}\theta=2\pi\Rightarrow c=\frac{1}{\sqrt{2\pi}}
+\]</span></p>
+<p><span class="math display">\[E(Z)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}ze^{-\frac{z^2}{2}}\mathrm{d}z=0\space\text{(by symmetry)}\]</span></p>
+<p><span class="math display">\[E(Z^2)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}z^2e^{-\frac{z^2}{2}}\mathrm{d}z=\frac{2}{\sqrt{2\pi}}\int_{0}^{\infty}z\cdot ze^{-\frac{z^2}{2}}\mathrm{d}z\]</span></p>
+<p>Let <span class="math display">\[
+\begin{aligned}
+u=z\Rightarrow \mathrm{d}u=\mathrm{d}z\\
+v=-e^{-\frac{z^2}{2}}\Rightarrow \mathrm{d}v=ze^{-\frac{z^2}{2}}\mathrm{d}z
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathrm{d}(uv)=u\mathrm{d}v+v\mathrm{d}u\Rightarrow u\mathrm{d}v=\mathrm{d}(uv)-v\mathrm{d}u
+\end{aligned}
+\]</span> Then <span class="math display">\[E(Z^2)=\frac{2}{\sqrt{2\pi}}\int_{0}^{\infty}e^{-\frac{z^2}{2}}\mathrm{d}z=1\]</span></p>
+<p><span class="math display">\[Var(Z)=1\]</span></p>
+<p>CDF</p>
+<p><span class="math display">\[\Phi(z)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{z}e^{-\frac{t^2}{2}}\mathrm{d}t\]</span></p>
+<p>by symmetry, we also have</p>
+<p><span class="math display">\[\Phi(Z)=1-\Phi(Z)\]</span> <span class="math display">\[M(t)=E(e^{tX})
+=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{tz-z^2/2}\mathrm{d}z
+=\frac{e^{t^2/2}}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-(z-T)^2/2}\mathrm{d}z
+=e^{\frac{t^2}{2}}
+\]</span> <span class="math display">\[E(X)=M&#39;(t)\vert_{t=0}=te^{t^2/2}=0\]</span></p>
+<p><span class="math display">\[E(X^2)=e^{t^2/2}+t^2e^{t^2/2}=1\]</span></p>
+<p>Suppose <span class="math inline">\(Z=\frac{X-\mu}{\sigma}\)</span>, then <span class="math inline">\(X=\mu+\sigma Z\)</span>.</p>
+<p><span class="math inline">\(E(X)=\mu\)</span></p>
+<p><span class="math inline">\(Var(X)=\sigma^2\)</span></p>
+<p>Let <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span></p>
+<p>Find PDF</p>
+<p><span class="math display">\[f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-(\frac{x-\mu}{\sigma})^2/2}\]</span></p>
+<p>CDF <span class="math display">\[P(X\leqslant x)=P(\frac{X-\mu}{\sigma}\leqslant\frac{x-\mu}{\sigma})=\Phi(\frac{x-\mu}{\sigma})\]</span></p>
+<p><strong>Exponential distribution</strong></p>
+<p>Let <span class="math inline">\(X\sim Expo(\lambda)\)</span></p>
+<p>PDF</p>
+<p><span class="math display">\[f(x)=\lambda e^{-\lambda x}\quad\text{for}\space x&gt;0\]</span></p>
+<p>We call <span class="math inline">\(\lambda\)</span> the rate parameter.</p>
+<p>CDF <span class="math display">\[F(x)=P(X\leqslant x)
+=\int_{-\infty}^x\lambda e^{-\lambda t}\mathrm{d}t
+=\int_0^x \lambda e^{-\lambda t}\mathrm{d}t
+=-e^{-\lambda t}\mathrm{d}t
+=1-e^{-\lambda x}\quad x&gt;0\]</span></p>
+<p>Let <span class="math inline">\(Y=\lambda x\)</span>, then</p>
+<p><span class="math inline">\(Y\sim Expo(1)\)</span>, since</p>
+<p><span class="math display">\[f(y)=e^{-y}\]</span></p>
+<p><span class="math display">\[F(y)=P(Y\leqslant y)=P(X\leqslant \frac{y}{\lambda})=1-e^{-y}\]</span></p>
+<p><span class="math display">\[E(Y)=\int_0^{\infty}ye^{-y}\mathrm{d}y=1\]</span></p>
+<p><span class="math display">\[E(Y^2)=\int_0^{\infty}y^2e^{-y}\mathrm{d}y=1\]</span></p>
+<p><span class="math display">\[Var(Y)=E(Y^2)-(EY)^2=1\]</span></p>
+<p>Then for <span class="math inline">\(X=\frac{Y}{\lambda}\)</span></p>
+<p><span class="math display">\[E(X)=\frac{1}{\lambda}\]</span></p>
+<p><span class="math display">\[Var(X)=\frac{1}{\lambda^2}\]</span></p>
+<p><span class="math display">\[M(t)=E(e^{tY})=\int_0^{\infty}e^{ty}e^{-y}\mathrm{d}y=\int_0^{\infty}e^{-y(1-t)}\mathrm{d}y=\frac{1}{1-t}\space ,\quad t&lt;1\]</span></p>
+<p><span class="math display">\[\frac{1}{1-t}=\sum_{n=0}^{\infty}t^n=\sum_{n=0}^{\infty}n!\frac{t^n}{n!}\]</span></p>
+<p><span class="math display">\[E(Y^n)=n!\]</span></p>
+<p><span class="math display">\[E(X^n)=\frac{n!}{\lambda^n}\]</span></p>
+<p><strong>Beta distribution</strong></p>
+<p>Let <span class="math inline">\(X\sim Beta(a,b)\)</span></p>
+<p>PDF <span class="math display">\[f(x)=cx^{a-1}(1-x)^{b-1}\space,\space 0&lt;x&lt;1,\space\text{for real}\space a&gt;0\]</span></p>
+<p><strong>Gamma function</strong></p>
+<p><span class="math display">\[\Gamma(a)=\int_0^{\infty}x^ae^{-x}\frac{\mathrm{d}x}{x}\space ,\space\text{for}\space a&gt;0\]</span></p>
+<p>Properties</p>
+<ul>
+<li><p><span class="math inline">\(\Gamma(a+1)=a\Gamma(a)\)</span></p></li>
+<li><p><span class="math inline">\(\Gamma(a)=(a-1)!\)</span></p></li>
+</ul>
+<p>if <span class="math inline">\(a\)</span> is positive integer.</p>
+<p>Since <span class="math display">\[\int_0^{\infty}\frac{1}{\Gamma(a)}\frac{x^ae^{-x}}{x}\mathrm{d}x=1\]</span></p>
+<p>def PDF <span class="math display">\[f(x)=\frac{1}{\Gamma(a)}x^{a-1}e^{-x}\]</span></p>
+<p>Let <span class="math inline">\(Y=\frac{X}{\lambda}\)</span>, <span class="math inline">\(Y\sim Gamma(a,\lambda)\)</span></p>
+<p><span class="math display">\[f(y)=f(x)\frac{\mathrm{d}x}{\mathrm{d}y}
+=\frac{1}{\Gamma(a)}(\lambda y)^{a-1}e^{-\lambda y}\lambda
+=\frac{1}{\Gamma(a)}\frac{(\lambda y)^ae^{-\lambda y}}{y}\]</span></p>
+<p>Let <span class="math inline">\(X\sim Gamma(a,1)\)</span></p>
+<p><span class="math display">\[E(x^c)=\frac{1}{\Gamma(a)}\int_0^{\infty}x^cx^ae^{-x}\frac{\mathrm{d}x}{x}
+=\frac{1}{\Gamma(a)}\int_0^{\infty}x^{a+c}e^{-x}\frac{\mathrm{d}x}{x}
+=\frac{\Gamma(a+c)}{\Gamma(a)}\]</span></p>
+<p>if <span class="math inline">\(a+c&gt;0\)</span>.</p>
+<p><span class="math display">\[E(x)=a\]</span></p>
+<p><span class="math display">\[E(X^2)=a(a+1)\]</span></p>
+<p><span class="math display">\[Var(X)=a\]</span></p>
+<p><span class="math display">\[E(Y)=\frac{a}{\lambda}\]</span></p>
+<p><span class="math display">\[Var(Y)=\frac{a}{\lambda^2}\]</span> <span class="math display">\[M(t)=E(e^{tX})=\frac{1}{\Gamma(a)}\int_0^{\infty}e^{tx}x^ae^{-x}\frac{\mathrm{d}x}{x}
+=\frac{1}{\Gamma(a)}\int_0^{\infty}x^ae^{-(1-t)x}\frac{\mathrm{d}x}{x}\]</span></p>
+<p>Let <span class="math inline">\(y=(1-t)x\)</span>, then <span class="math inline">\(\mathrm{d}y=(1-t)\mathrm{d}x\)</span></p>
+<p><span class="math display">\[M(t)=\frac{1}{\Gamma(a)}\int_0^{\infty}(\frac{y}{1-t})^ae^{-y}\frac{\mathrm{d}y}{y}
+=\frac{(1-t)^{-a}}{\Gamma(a)}\int_0^{\infty}y^ae^{-y}\frac{\mathrm{d}y}{y}
+=\frac{1}{(1-t)^a}\]</span></p>
+<p><span class="math display">\[E(X)=M&#39;(t)\bigg\rvert_{t=0}=\frac{a}{(1-t)^{a+1}}\bigg\rvert_{t=0}=a\]</span></p>
+<p><span class="math display">\[E(X^2)=M&#39;&#39;(t)\bigg\rvert_{t=0}=\frac{a(a+1)}{(1-t)^{a+2}}=a(a+1)\]</span></p>
+</div>
+<div id="law-of-large-numbers-and-central-limit-theorem" class="section level1">
+<h1>Law of Large Numbers and Central Limit Theorem</h1>
+<p><strong>Markou inequality</strong></p>
+<p>What is the probability that the value of the r.v. is far from its expectation?</p>
+<p><span class="math display">\[P(\lvert{X}\rvert\geqslant a)\leqslant \frac{EX}{a}\]</span></p>
+<p>for any <span class="math inline">\(a&gt;0\)</span>.</p>
+<p>Proof:</p>
+<p>Let <span class="math inline">\(I\)</span> be the indicator r.v. for the event <span class="math inline">\(|X|\geqslant a\)</span>. That is</p>
+<p><span class="math display">\[
+I =
+\begin{cases}
+1, &amp; \text{if event}\space|X|\geqslant a\space\text{occurs} \\
+0, &amp; \text{otherwise}
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[aI\leqslant |X|\]</span></p>
+<p><span class="math display">\[aE(I)\leqslant E|X|\]</span></p>
+<p><span class="math display">\[\Rightarrow 1\cdot P(|X|\geqslant a)+0\cdot P(|X|&lt;a)\leqslant\frac{E|X|}{a}\]</span></p>
+<p><strong>Chehyshev Inequality</strong></p>
+<p><span class="math display">\[P(|X-\mu|\geqslant a)\leqslant\frac{Var(X)}{a^2}\]</span></p>
+<p>Proof:</p>
+<p><span class="math display">\[P(|X-\mu|\geqslant a)
+=P(|X-\mu|^2\geqslant a^2)\leqslant\frac{E(|X-\mu|^2)}{a^2}
+=\frac{Var(X)}{a^2}\]</span></p>
+<p><strong>Laws of Large Numbers</strong></p>
+<p>Let <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(\cdots\)</span> be i.i.d.</p>
+<p><span class="math display">\[E(X_i)=\mu\]</span></p>
+<p><span class="math display">\[Var(X_i)=\sigma^2\]</span></p>
+<p><span class="math display">\[Var(\sum_{i=1}^{n})=nVar(X_i)\]</span></p>
+<p>Let <span class="math inline">\(\overline{X}_n=\frac{1}{n}\sum_{j=1}^{n}X_j\)</span> (sample mean)</p>
+<p>(strong) Law of Large Numbers:</p>
+<p><span class="math display">\[\overline{X}_n\rightarrow\mu\quad\text{as}\quad n\rightarrow\infty\]</span></p>
+<p>(week) Law of Large Numbers:</p>
+<p><span class="math display">\[P(|\overline{X}_n-\mu|&gt;c)\rightarrow 0\quad\text{as}\quad n\rightarrow\infty\]</span></p>
+<p>Proof:</p>
+<p><span class="math display">\[P(|\overline{X}_n-\mu|&gt;c)
+\leqslant\frac{Var(\overline{X}_n)}{c^2}
+=\frac{\frac{1}{n^2}n\sigma^2}{c^2}
+=\frac{\sigma^2}{nc^2}\rightarrow 0\]</span></p>
+<p><span class="math inline">\(\overline{X}_n\mu\rightarrow0\)</span> with prob. 1, but what does the distribution of <span class="math inline">\(\overline{X}_n\)</span> look like?</p>
+<p><strong>Central Limit Theorem</strong></p>
+<p><span class="math display">\[n^{1/2}\frac{\overline{X}_n-\mu}{\sigma}\rightarrow N(0,1)\quad\text{in distribution}\]</span></p>
+<p>as <span class="math inline">\(n\rightarrow\infty\)</span>.</p>
+<p>Equivalently</p>
+<p><span class="math display">\[\frac{\sum_{j=1}^{n}X_j-n\mu}{\sqrt{n}\sigma}\rightarrow N(0,1)\quad\text{in distribution}\]</span></p>
+<p>Proof:</p>
+<p>Let us assume without loss of generality that <span class="math inline">\(\mu=0\)</span>, <span class="math inline">\(\sigma=1\)</span>.</p>
+<p>Let <span class="math display">\[S_n=\sum_{j=1}^{n}X_j\]</span></p>
+<p><span class="math display">\[E(S_n)=n\mu\]</span></p>
+<p><span class="math display">\[Var(S_n)=n\sigma^2\]</span></p>
+<p>Assuming MGF <span class="math inline">\(M(t)\)</span> of <span class="math inline">\(X_j\)</span> exists.</p>
+<p>We will show that the MGF of <span class="math inline">\(\frac{S_n}{\sqrt{n}}\)</span> converges to the MGF of <span class="math inline">\(N(0,1)\)</span>. We have</p>
+<p><span class="math display">\[M(t)=E(e^{tS_n/\sqrt{n}})=E(e^{tx_1/\sqrt{n}})\cdots E(e^{tx_n/\sqrt{n}})=[M(\frac{t}{\sqrt{n}})]^n\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\lim_{n\rightarrow\infty}n\ln M(\frac{t}{\sqrt{n}})\\
+&amp;=\lim_{n\rightarrow\infty}\frac{\ln M(\frac{t}{\sqrt{n}})}{\frac{1}{n}}\\
+\text{Let}\space y=\frac{1}{\sqrt{n}}\\
+&amp;=\lim_{y\rightarrow 0}\frac{\ln M(yt)}{y^2}\\
+\text{L&#39; Hopital&#39;s}\\
+&amp;=\lim_{y\rightarrow 0}\frac{tM&#39;(yt)}{2yM(yt)}\\
+&amp;=\frac{t}{2}\lim_{y\rightarrow 0}\frac{M&#39;(yt)}{y}\\
+\text{Since}\space M(0)=1,\space M&#39;(0)=0,\space\text{L&#39; Hopital&#39;s}\\
+&amp;=\frac{t^2}{2}\lim_{y\rightarrow 0}\frac{M&#39;&#39;(yt)}{1}\\
+&amp;=\frac{t^2}{2}
+\end{aligned}
+\]</span></p>
+<p>Which is the log of <span class="math inline">\(e^{t^2/2}\)</span>, the MGF of <span class="math inline">\(N(0,1)\)</span>.</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Probability on A Hugo website</title>
+    <link>/tags/probability/</link>
+    <description>Recent content in Probability on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/probability/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Probability and Statistics</title>
+      <link>/2018/05/24/probability-and-statistics/</link>
+      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/24/probability-and-statistics/</guid>
+      <description>Comemts:
+“Statistics is the study of uncertainty.”
+Fundamental concepts in probability and statisticsA sample space \(S\)
+An event \(A \subseteq S\)
+Axions
+(0) \[P(A) \in [0,1]\]
+(1) \[P(\phi)=0\] \[P(S)=1\]
+where \(\phi\) is the null event.
+(2) \[P(\cup_{i=1}^{n} A_i)=\sum_{i=1}^{n}P(A_i)-\sum_{i&amp;lt;j}P(A_i\cap A_j)+\sum_{i&amp;lt;j&amp;lt;k}P(A_i\cap A_j\cap A_k)-\cdots+(-1)^{n+1}P(\cap_{i=1}^{n}A_i)\]
+where \(P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1})\).
+\(P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)\)\(\Rightarrow\) (Bayes’ Theorem)\[\frac{P(A\mid B)P(A)}{P(B)}\]
+if \(P(B)&amp;gt;0\)
+What is \(P(A\mid B)\)?
+Conditional probability: update prob.</description>
+    </item>
+    
+  </channel>
+</rss>

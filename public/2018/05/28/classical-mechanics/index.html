@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.41" />
+
+
+<title>Classical Mechanics - A Hugo website</title>
+<meta property="og:title" content="Classical Mechanics - A Hugo website">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/Guocanyong/blogdown">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Classical Mechanics</h1>
+
+    
+    <span class="article-date">2018/05/28</span>
+    
+
+    <div class="article-content">
+      <div id="principle-of-least-action-delta-a0" class="section level1">
+<h1>Principle of Least Action (<span class="math inline">\(\delta A=0\)</span>)</h1>
+<p>For arbitary function <span class="math inline">\(A(x,y)\)</span>, <span class="math inline">\(1^{st}\)</span> order changes in <span class="math inline">\(A(x,y)\)</span> is</p>
+<p><span class="math display">\[\delta A(x,y)=\frac{\partial A}{\partial x}\delta A+\frac{\partial A}{\partial y}\delta y\]</span> At stationary point, the derivative of <span class="math inline">\(A\)</span> with repect to <span class="math inline">\(x_i\)</span> vanishes:</p>
+<p><span class="math display">\[\frac{\partial A}{\partial x_i}=0\]</span></p>
+<p>for all <span class="math inline">\(x_i\)</span>.</p>
+<p>Then the condition that <span class="math inline">\(A\)</span> is stationary is</p>
+<p><span class="math display">\[\delta A=0\]</span></p>
+<p>def <span class="math display">\[A=\int_{t_1}^{t_2}\mathscr{L}\mathrm{d}t\]</span></p>
+<p>where <span class="math display">\[\mathscr{L}=\mathscr{L}(q_i,\dot q_i)\]</span></p>
+<p>The condiction for a stationary action is <span class="math display">\[\delta A=0\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\Rightarrow &amp;\int_{t_1}^{t_2}\delta\mathscr{L}\mathrm{d}t=0\\
+&amp;=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i+\frac{\partial\mathscr{L}}{\partial \dot q_i}\delta\dot q_i)\mathrm{d}t\\
+&amp;=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i\mathrm{d}t+
+\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial\dot q_i}\frac{\mathrm{d}\delta q_i}{\mathrm{d}t}\mathrm{d}t\\
+&amp;=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\mathrm{d}t+\frac{\partial\mathscr{L}}{\partial\dot q_i}\delta q_i\bigg\rvert_{t_1}^{t_2}-\int_{t_1}^{t_2}\delta q_i\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i}\mathrm{d}t
+\end{aligned}
+\]</span> <span class="math inline">\(\delta q_i\)</span> vanished at the ends of the path (<span class="math inline">\(\delta q_i(t_1)=\delta q_i(t_2)=0\)</span>)</p>
+<p><span class="math display">\[=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}-\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i})\delta q_i\mathrm{d}t\]</span> Since <span class="math inline">\(\delta q_i\)</span> is arbitary, then <span class="math inline">\(\delta A\)</span> is only zero (at order <span class="math inline">\(\delta q\)</span>) if</p>
+<p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i}
+=\frac{\partial\mathscr{L}}{\partial q_i}\]</span></p>
+<p>The path that minizes the action satisfies the Eule-Legrange Equation.</p>
+<p>def The Lagrangian <span class="math display">\[\mathscr{L}=\frac{1}{2}m{\dot q_i}^2-V(q_i)\]</span></p>
+<p>The E-L eqn. is therefore <span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}m\dot q_i=-\frac{\partial V}{\partial q_i}\]</span></p>
+<p>which is Newton’s equation of motion.</p>
+<p>def <span class="math display">\[p_i=\frac{\partial\mathscr{L}}{\partial\dot q_i}\]</span></p>
+<p>where <span class="math inline">\(p_i\)</span> is called the generalized momentum, <span class="math inline">\(\frac{\partial\mathscr{L}}{\partial\dot q_i}\)</span> is called the generalized momentum conjugate to <span class="math inline">\(q_i\)</span>.</p>
+</div>
+<div id="symmmetries-and-consenvation-laws-deltamathscrl" class="section level1">
+<h1>Symmmetries and Consenvation Laws (<span class="math inline">\(\delta\mathscr{L}\)</span>)</h1>
+<p>Asymmetry is an active coordinate transform that does change the value of the Lagrangian.</p>
+<p><strong>Infinitesimal Transformation</strong></p>
+<p>Let’s change the coordinate <span class="math inline">\(q_i\)</span> by a small amount <span class="math inline">\(f_i(q)\epsilon\)</span>.</p>
+<p><span class="math display">\[q_i\rightarrow q_i+f_i(q_i)\epsilon\]</span></p>
+<p><span class="math display">\[\delta q_i=f_i(q)\epsilon\]</span></p>
+<p>where <span class="math inline">\(f_i(q)\)</span> means that the small shift of the coordinates may itself depend on the value of the coordinates. <span class="math inline">\(\epsilon\)</span> is an infinitesimal parameter.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\delta\mathscr{L}(q_i,\dot q_i)&amp;=\sum_i(\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i+\frac{\partial\mathscr{L}}{\partial\dot q_i}\delta\dot q_i)\\
+&amp;=\sum_i(\dot p_i\delta q_i+p_i\delta\dot q_i)\\
+&amp;=\frac{\mathrm{d}}{\mathrm{d}t}\sum_ip_i\delta q_i\\
+&amp;=\epsilon\frac{\mathrm{d}}{\mathrm{d}t}\sum_ip_if_i(q)
+\end{aligned}
+\]</span></p>
+<p>def Noether’s charge <span class="math display">\[Q=\sum_ip_if_i(q)\]</span></p>
+<p><span class="math display">\[\delta\mathscr{L}=\frac{\mathrm{d}}{\mathrm{d}t}Q\]</span></p>
+<p>If symmetry, <span class="math inline">\(\delta\mathscr{L}=0\)</span>, then <span class="math inline">\(Q\)</span> is a conserved quantity.</p>
+<ul>
+<li>Translation Invariant and Conservation of Momentum</li>
+</ul>
+<p>e.g. Two particles on a line</p>
+<p>The Lagrangian is invariant under the change (translation).</p>
+<p><span class="math display">\[q_1\rightarrow q_1+\delta\Rightarrow f_1(q)=1\]</span></p>
+<p><span class="math display">\[q_2\rightarrow q_2+\delta\Rightarrow f_2(q)=1\]</span></p>
+<p>Let’s calulate the Noether’s Charge:</p>
+<p><span class="math display">\[Q=\sum_ip_if_i(q)=p_1+p_2\]</span></p>
+<p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}(p_1+p_2)=0\]</span></p>
+<p>Momentum conservation is a result of translation invariance.</p>
+<ul>
+<li>Rotation Invariant and Conservation of Angular Momentum</li>
+</ul>
+<p>In <span class="math inline">\(\mathbb{R}^2\)</span>, rotating a vector <span class="math inline">\((x,y)\)</span> by a counterclockwise angle <span class="math inline">\(\theta\)</span> in a fixed coordinate system</p>
+<p><span class="math display">\[x&#39;=x\cos\theta-y\sin\theta\]</span></p>
+<p><span class="math display">\[y&#39;=x\sin\theta+y\cos\theta\]</span></p>
+<p><span class="math display">\[\theta=\delta\]</span></p>
+<p><span class="math display">\[\cos\theta=1-\frac{\delta^2}{2}\]</span> <span class="math display">\[\sin\theta=\delta\]</span></p>
+<p><span class="math display">\[x&#39;=x-y\delta\Rightarrow\delta x=-y\delta\Rightarrow f_x(q)=-y\]</span></p>
+<p><span class="math display">\[y&#39;=x\delta +y\Rightarrow\delta y=x\delta\Rightarrow f_y(q)=x\]</span></p>
+<p><span class="math display">\[Q=\sum_ip_if_i(q)=-yp_x+xp_y\equiv L_z\]</span></p>
+<p>def <span class="math display">\[\vec{L}=\vec{r}\times\vec{P}\]</span></p>
+<p>where <span class="math inline">\(\vec{L}\)</span> is called angualr momentum.</p>
+<ul>
+<li>Time-translation Symmetry and Conservation of Energy (<span class="math inline">\(\frac{\mathrm{d}\mathscr{L}}{\mathrm{d}t}=0\)</span>)</li>
+</ul>
+<p>A system is time-translation invariant if there is no explicit time dependence in its Lagrangian.</p>
+<p>If LAgrangian has explicit time dependence,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\mathrm{d}\mathscr{L}}{\mathrm{d}t}&amp;=\sum_i(\frac{\partial\mathscr{L}}{\partial q_i}\dot q_i+\frac{\partial\mathscr{L}}{\partial\dot q_i}\ddot q_i)+\frac{\partial\mathscr{L}}{\partial t}\\
+&amp;=\sum_i(\dot p_i\dot q_i+p_i\ddot q_i)+\frac{\partial\mathscr{L}}{\partial t}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[\Rightarrow\frac{\mathrm{d}}{\mathrm{d}t}(\sum_ip_i\dot q_i-\mathscr{L})=-\frac{\partial\mathscr{L}}{\partial t}\]</span></p>
+<p>def <span class="math display">\[H=\sum_ip_i\dot q_i-\mathscr{L}\]</span></p>
+<p><span class="math display">\[\frac{\mathrm{d}H}{\mathrm{d}t}=-\frac{\partial\mathscr{L}}{\partial t}\]</span></p>
+<p><span class="math inline">\(H\)</span> varies with time only if the Lagrangian has an explicit time dependence. In other words, if a system is time-translation invariant, the quantity <span class="math inline">\(H\)</span> is conserved.</p>
+<p><span class="math display">\[
+\begin{aligned}
+H&amp;=p_i\dot q_i-\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
+&amp;=m{\dot q_i}^2-\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
+&amp;=\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
+&amp;=T+V
+\end{aligned}
+\]</span></p>
+<p><strong>Hamiltonian equals Energy!!!</strong></p>
+</div>
+<div id="model-and-application" class="section level1">
+<h1>Model and Application</h1>
+<p><strong>Two body problem</strong></p>
+<p><span class="math display">\[\mathscr{L}=\frac{1}{2}m_1\dot{\mathbf{x}}_1^2+\frac{1}{2}m_2\dot{\mathbf{x}}_2^2+U(\mathbf{x_1}-\mathbf{x_2})\]</span></p>
+<p>The equations of motion</p>
+<p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{x}}_1}
+=\frac{\partial\mathscr{L}}{\partial\mathbf{x}_1}
+\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}m_1\dot{\mathbf{x}}_1
+=-\frac{\partial U(\mathbf{x}_1-\mathbf{x}_2)}{\partial\mathbf{x_1}}\]</span></p>
+<p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{x}}_2}
+=\frac{\partial\mathscr{L}}{\partial\mathbf{x}_2}
+\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}m_2\dot{\mathbf{x}}_2
+=-\frac{\partial U(\mathbf{x}_1-\mathbf{x}_2)}{\partial\mathbf{x_2}}\]</span></p>
+<p>Since <span class="math display">\[\frac{\partial U}{\partial\mathbf{x}_1}=-\frac{\partial U}{\mathbf{x}_2}\quad\text{(Newton&#39;s Thrid Law)}\]</span></p>
+<p>Then <span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}(\mathbf{p_1}+\mathbf{p_2})=0\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> conservation of momentum</p>
+<p>CM frame</p>
+<p><span class="math display">\[\mathbf{X}=\frac{m_1\mathbf{x_1}+m_2\mathbf{x_2}}{M}\]</span></p>
+<p>where <span class="math inline">\(M=m_1+m_2\)</span>.</p>
+<p><span class="math display">\[\mathbf{x}=\mathbf{x_1}-\mathbf{x_2}\]</span></p>
+<p><span class="math display">\[\mathscr{L}(\textbf{x}_1,\textbf{x}_2,\dot{\mathbf{x}}_1,\dot{\mathbf{x}}_2)\rightarrow \mathscr{L}(\dot{\mathbf{X}},\mathbf{x},\dot{\mathbf{x}})\]</span></p>
+<p><span class="math display">\[M\mathbf{X}=m_1\mathbf{x}_1+m_2(\mathbf{x}_2-\mathbf{x})=M\mathbf{x}_1-m_2\mathbf{x}\]</span></p>
+<p><span class="math display">\[\Rightarrow\mathbf{x}_1=\mathbf{X}+\frac{m_2}{M}\mathbf{x}\]</span></p>
+<p><span class="math display">\[\Rightarrow\dot{\mathbf{x}}_1=\dot{\mathbf{X}}+\frac{m_2}{M}\dot{\mathbf{x}}\]</span></p>
+<p><span class="math display">\[M\mathbf{X}=m_1(\mathbf{x}+\mathbf{x}_2)+m_2\mathbf{x}_2=M\mathbf{x}_2+m_1\mathbf{x}\]</span></p>
+<p><span class="math display">\[\Rightarrow\mathbf{x}_2=\mathbf{X}-\frac{m_2}{M}\mathbf{x}\]</span></p>
+<p><span class="math display">\[\Rightarrow\dot{\mathbf{x}}_2=\dot{\mathbf{X}}-\frac{m_2}{M}\dot{\mathbf{x}}\]</span></p>
+<p><span class="math display">\[\mathscr{L}=\frac{1}{2}m_1(\dot{\mathbf{X}}-\frac{m_2}{M}\dot{\mathbf{x}})^2
++\frac{1}{2}m_2(\dot{\mathbf{X}}+\frac{m_2}{M}\dot{\mathbf{x}})^2-U(\mathbf{x})
+=\frac{1}{2}M\dot{\mathbf{X}}^2+\frac{1}{2}m\dot{\mathbf{x}}^2-U(\mathbf{x})\]</span></p>
+<p>where <span class="math inline">\(m=\frac{m_1m_2}{M}\)</span></p>
+<p>The equations of motion</p>
+<p><span class="math display">\[\frac{\mathbf{d}}{\mathbf{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{X}}}
+=\frac{\partial\mathscr{L}}{\partial\mathbf{X}}
+\Rightarrow\frac{\mathrm{d}}{\mathrm{d}t}M\dot{\mathbf{X}}=0
+\Rightarrow M\dot{\mathbf{X}}=const.\]</span></p>
+<p><span class="math display">\[\frac{\mathbf{d}}{\mathbf{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{x}}}
+=\frac{\partial\mathscr{L}}{\partial\mathbf{x}}
+\Rightarrow\frac{\mathbf{d}}{\mathbf{d}t}m\dot{\mathbf{x}}=-\frac{\partial U}{\partial\mathbf{x}}\]</span></p>
+<p>Then <span class="math display">\[\mathscr{L}=\frac{1}{2}m\dot{\textbf{x}}^2-U(\mathbf{x})\]</span></p>
+<p>Polar coordintes</p>
+<p>Suppose <span class="math inline">\(\mathscr{L}=\frac{1}{2}m\dot{\mathrm{r}}^2-U(\mathrm{r})\)</span></p>
+<p>where</p>
+<p><span class="math display">\[\textbf{r}=x\hat{x}+y\hat{y}=r\hat{r}\]</span></p>
+<p><span class="math display">\[\hat{r}=\cos\theta\hat{x}+\sin\theta\hat{y}\]</span></p>
+<p><span class="math display">\[\hat{\theta}=-\sin\theta\hat{x}+\cos\theta\hat{y}\]</span></p>
+<p><span class="math display">\[\frac{\mathrm{d}\hat{r}}{\mathrm{d}t}=-\dot{\theta}\sin\theta+\dot{\theta}\cos\theta\hat{y}=\dot{\theta}\hat{\theta}\]</span></p>
+<p><span class="math display">\[\dot{\mathbf{r}}=\frac{\mathbf{d}\textbf{r}}{\mathbf{d}t}=\frac{\mathrm{d}r}{\mathrm{d}t}\hat{r}+r\frac{\mathrm{d}\hat{r}}{\mathrm{d}t}=\dot{r}\hat{r}+r\dot{\theta}\hat{\theta}\]</span></p>
+<p><span class="math display">\[\mathscr{L}=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)-U(r)\]</span></p>
+<p>The equations of motion</p>
+<p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{r}}=\frac{\partial\mathscr{L}}{\partial r}\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}m\dot{r}=mr\dot{\theta}^2-\frac{\partial U}{\partial r}\]</span></p>
+<p>Forces in the radial direction.</p>
+<p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\theta}}=\frac{\partial\mathscr{L}}{\partial\theta}\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}mr^2\dot{\theta}=0\]</span></p>
+<p>Forces in the <span class="math inline">\(\theta\)</span> direction.</p>
+<p>def <span class="math display">\[L=mr^2\dot{\theta}\]</span></p>
+<p>Since <span class="math inline">\(\frac{\partial\mathscr{L}}{\partial\theta}=0\)</span>, so the system is rotation invariant <span class="math inline">\(\Rightarrow\)</span> conservation of angular momentum</p>
+<p><span class="math display">\[m\ddot{r}=mr\dot{\theta}-\frac{\partial U}{\partial r}=mr(\frac{L}{mr^2})^2-\frac{\partial U}{\partial r}=\frac{L^2}{mr^3}-\frac{\partial U}{\partial r}\]</span></p>
+<p><span class="math display">\[H=\sum_ip_i\dot{q}_i-\mathscr{L}=m\dot{r}^2+mr^2\dot{\theta}^2-\frac{1}{2}m\dot{r}^2-\frac{1}{2}mr^2\dot{\theta}^2+U(r)=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+U(r)\]</span></p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

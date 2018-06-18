@@ -1,0 +1,623 @@
+---
+title: Probability and Statistics
+author: Canyong Guo
+date: '2018-05-24'
+categories:
+  - Math
+tags:
+  - probability
+output:
+  html_document:
+    df_print: paged
+slug: probability-and-statistics
+---
+Comemts:
+
+**"Statistics is the study of uncertainty."**
+
+# Fundamental concepts in probability and statistics
+
+- A sample space $S$
+
+- An event $A \subseteq S$
+
+Axions
+
+**(0)** $$P(A) \in [0,1]$$
+
+**(1)** $$P(\phi)=0$$ $$P(S)=1$$
+
+where $\phi$ is the null event.
+
+**(2)** $$P(\cup_{i=1}^{n} A_i)=\sum_{i=1}^{n}P(A_i)-\sum_{i<j}P(A_i\cap A_j)+\sum_{i<j<k}P(A_i\cap A_j\cap A_k)-\cdots+(-1)^{n+1}P(\cap_{i=1}^{n}A_i)$$
+
+where $P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1})$.
+
+
+- $P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)$
+
+$\Rightarrow$ (Bayes' Theorem)$$\frac{P(A\mid B)P(A)}{P(B)}$$
+
+if $P(B)>0$
+ 
+What is $P(A\mid B)$?
+
+Conditional probability: update prob./beliefs/uncertainty based on new evidence.
+
+**"Conditioning is the Soul of Statistics".**
+
+- $P(A\cup B)=P(A)+P(B\cap A^c)=P(A)+P(B)-P(B\cap A)$
+
+$\Rightarrow$ (Law of total Prob.) $$P(B)=P(B\cap A)+P(B\cap A^c)$$
+
+In generally
+
+$$P(B)=\sum_iP(B\cap A_i)=\sum_i P(B\mid A_i)P(A_i)$$
+
+# Random variables and related concepts
+
+R. V. is a very important concept in probability theory.
+
+What is a r. v.?
+
+It's a measureable function maps a subset in samples space into a number in $\mathbb{R}$. Think of it as a numberical "summary" of an aspect of the experiment.
+
+For discrete r. v.
+
+def **probability mass function** (PMF) 
+
+$$f(x)=P(X=x)$$
+
+- $P(X=x)\geqslant 0$
+- $\sum_{x=0}^nP(X=x)=1$
+
+def **cumulative distribution function** (CDF)
+
+$$F(X)=P(X\leqslant x)$$
+
+- $\lim_{x\rightarrow-\infty}F(x)=0$
+- $\lim_{x\rightarrow+\infty}F(x)=1$
+
+def **expected value** 
+
+$$E(X)=\sum xP(X=x)$$
+
+For continuous r. v.
+
+def **probability density function** (PDF) 
+
+$$\int_{a}^{b}f_X(x)\mathrm{d}x=P(a\leqslant X\leqslant b)$$
+
+- $f_X(x)\geqslant 0$
+- $\int_{-\infty}^{\infty}f_X(x)=1$
+
+def **CDF** 
+
+$$F(X)=\int_{-\infty}^{x}f_X(x)\mathrm{d}x=P(X\leqslant x)$$
+
+def **expected value** 
+
+$$E(X)=\int_{-\infty}^{\infty}xf_X(x)\mathrm{d}x$$
+
+**Law of the Unconscions Statistician** (LOTUS)
+
+$$E(g(X))=\int_{-\infty}^{\infty}g(x)f_X(x)\mathrm{d}x$$
+
+This alllows us to determine the expected value of any function of $X$ without knowing its distribution.
+
+def **moment-generating function** (MGF)
+
+$$M(t)=E(e^{tX})=E(\sum_{n=0}^{\infty}\frac{X^{n}t^n}{n!})=\sum_{n=0}^{\infty}E(X^n)\frac{t^n}{n!}$$
+
+where $E(X^{n})$ is called $n$-th moment.
+
+MGF is defined to compute the expected value of any power of $X$.
+
+Why is MGF important?
+
+- The $n$-th moment, $E(X^n)$ is coef. of $\frac{t^n}{n!}$ in Taylor series of $M(t)$.
+
+$$M^{n}(0)=\frac{\mathrm{d}^n}{\mathrm{d}t^t}M(t)\vert_{t=0}=E(X^{n})$$
+
+- MGF determines the distribution. E.g. if $X$, $Y$ has same MGF, then they have same CDF.
+
+- If $X$ has MGF $M_x$, $Y$ has MGF $M_y$, X is indep. of $Y$, then MGF of $X+Y$ is $$E(e^{t(X+Y)})=E(e^{tX})E(e^{tY})=M_x(t)M_y(t)$$
+
+def **variance** $$Var(X)=E((X-EX)^2)=E(X^2+(EX)^2-2X(EX))=E(X^2)-(EX)^2$$
+
+def **covariance** $$Cov(X,Y)=E[(X-EX)(Y-EY)]=E[XY+(EX)(EY)-X(EY)-Y(EX)]=E(XY)-(EX)(EY)$$
+
+If $X$, $Y$ are indep., then
+$$E(XY)=E(X)E(Y)$$
+then
+$$Cov(X,Y)=0$$
+
+Expected value function is linear.
+
+- $E(X+Y)=E(X)E(Y)$
+- $E(cX)=cE(X)$
+
+more generally
+
+$$E(\sum_{i}^{n}X_i)=\sum_{i}^{n}E(x_i)$$
+This holds true even though the $X_i$ are dependent.
+
+Variance is not linear.
+
+- $Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)$
+- $Var(cX)=c^2Var(X)$
+
+more generally
+
+$$Var(\sum X)=\sum Var(X)+2\sum_{i<j}Cov(X_i,X_j)$$
+
+#Random Variables and Their distributions
+
+**Bernoulli distribution**: $X$ has only tow possible vaues, 0 and 1.
+
+Let $X\sim Bern(p)$
+
+PMF:
+
+- $P(X=1)=p$
+- $P(X=0)=1-p$
+
+$$E(X)=\sum_x xP(X=x)=1\times p+0\times(1-p)=p$$
+
+$$E(X^2)=1^2\times p+0^2\times(1-p)=p$$
+
+$$Var(X)=E(X^2)-(EX)^2=p-p^2=p(1-p)=pq$$
+
+MGF:
+
+$$M(t)=E(e^{tX})=e^{t\cdot 0}q+e^{t\cdot 1}p=q+pe^t$$
+
+**Binomial distribution**: $n$ indep. $Bern(P)$ trials
+
+Let $X\sim Bin(n,p)$
+
+PMF: $$P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$$
+
+where $0\leqslant k\leqslant n$.
+
+We can write $X=X_1+\cdots+X_n$, where $X_i$ are i.i.d. $Bern(p)$
+
+$$E(X)=nE(X_i)=np\space\text{(by linearity)}$$
+
+$X^2=X_1^2+\cdots+X_n^2+2X_1X_2+\cdots+2X_{n-1}X_{n}$
+
+$$
+\begin{aligned}
+ E(X^2)&=nE(X_1^2)+2\binom{n}{2}E(X_1X_2) \\
+ &=nE(X_1)^2+2\binom{n}{2}E(X_1)E(X_2)\space\text{(by indep.)}\\
+ &=np^2+n(n-1)p^2
+\end{aligned}
+$$
+
+$Var(X)=E(X^2)-(EX)^2=npq$
+
+$M(t)=(q+pe^t)^n$
+
+**Geometric distribution**: Count number of failures before first success.
+
+Let $X\sim Geom(p)$
+
+PMF: 
+$$P(X=k)=q^kp$$
+for $k\in\mathbb{N}$.
+
+$$EX=0\cdot p+(1+EX)q\space\text{(trick)}$$
+
+$$\Rightarrow EX=\frac{q}{p}$$
+
+$$Var(X)=\frac{q}{p^2}$$
+
+**Hypergeometric distribution**: Have $b$ black, $w$ white marbles. Pick simple random ample of size $n$. Find dist. of number of white marbles in sample.
+
+Let $X\sim HGeom(w,b,n)$, $p=\frac{w}{w+b}$, $w+b=N$
+
+$$P(X=k)=\frac{\binom{w}{k}\binom{b}{n-k}}{\binom{w+b}{n}}$$
+
+where $0\leqslant k\leqslant w$, $0\leqslant n-k\leqslant b$.
+
+Vandermonde's Identity
+$$\sum_{k=0}^{w}P(X=k)=1$$
+$$\begin{aligned}
+Var(\sum_{j=1}^{n}X_j)&=Var(X_1)+\cdots+Var(X_n)+2\sum_{i<j}Cor(X_i+X_j) \\
+&=npq+2\binom{n}{2}(\frac{w}{N}\frac{w-1}{N-1}-p^2) \\
+&=\frac{N-n}{N-1}npq
+\end{aligned}
+$$
+
+**Posson distribution**:
+
+Let $X\sim Pois(\lambda)$
+
+PMF:
+$$P(X=k)=e^{-\lambda}\frac{\lambda^{k}}{k!}$$ 
+where $k\in\mathbb{N}$. We call $\lambda$ the rate parameter, $\lambda >0$.
+
+Valid: $\sum_{k=0}^{n}P(X=k)=\sum_{k=0}^{n}e^{-\lambda}\frac{\lambda^{k}}{k!}=e^{-\lambda}e^{\lambda}=1$
+
+$$
+\begin{aligned}
+E(X)&=e^{-\lambda}\sum_{k=0}^{n}k\frac{\lambda^k}{k!}\\
+&=e^{-\lambda}\sum_{k=1}^{n}k\frac{\lambda^k}{k!}\\
+&=\lambda e^{-\lambda}\sum_{k-1=0}^{n}\frac{\lambda^{k-1}}{(k-1)!}\\
+&=\lambda e^{-\lambda}e^{\lambda}\\
+&=\lambda
+\end{aligned}
+$$
+
+$E(X^2)=e^{-\lambda}\sum_{k=0}^{\infty}k^2\frac{\lambda^k}{k!}$
+
+Since $$e^{\lambda}=\sum_{k=0}^{\infty}\frac{\lambda^k}{k!}$$
+
+Taking the derivative w.r.t. $\lambda$, $$e^{\lambda}=\sum_{k=1}^{\infty}\frac{k\lambda^{k-1}}{k!}$$
+
+$$\lambda e^{\lambda}=\sum_{k=1}^{\infty}\frac{k\lambda^k}{k!}$$
+
+Repeating,
+$$\lambda e^{\lambda}+e^{\lambda}=\sum_{k=1}^{\infty}\frac{k^2\lambda^{k-1}}{k!}$$
+
+$$\lambda(\lambda+1)e^{\lambda}=\sum_{k=1}^{\infty}\frac{k^2\lambda^k}{k!}$$
+
+$E(X^2)=\lambda^2+\lambda$
+
+$Var(X)=E(X^2)-(EX)^2=\lambda$
+
+MGF:
+$$
+M(t)=E(e^{tX})
+=\sum_{k}^{\infty}e^{tk}e^{-\lambda}\frac{\lambda^k}{k!}
+=e^{-\lambda}\sum_{k=0}^{\infty}\frac{(\lambda e^t)^k}{k!}
+=e^{-\lambda}e^{\lambda e^t}
+$$
+
+**Uniform distribution**: competely random position in $[a,b]$
+
+Let $U\sim Unif(a,b)$
+
+PDF
+
+$$
+f(x) =
+\begin{cases}
+c, & a\leqslant x\leqslant b \\
+0, & \text{otherwise}
+\end{cases}
+$$
+Find $c$:
+$$\int_a^b c\mathrm{d}x=1\Rightarrow c=\frac{1}{b-a}$$
+CDF
+$$F(x)=\int_{x}^{\infty}f(t)\mathrm{d}t=\int_{x}^{a}\frac{1}{b-a}\mathrm{d}t=\frac{x-a}{b-a}$$
+
+$$E(U)=\int_a^{b}\frac{x\mathrm{d}x}{b-a}=\frac{x^2}{2(b-a)}\bigg\rvert_a^b=\frac{a+b}{2}$$
+This is the midpoint of the interval $[a,b]$.
+
+$$E(U^2)=\int_{-\infty}^{\infty}x^2f(x)\mathrm{d}x
+=\int_a^b\frac{x^2}{b-a}\mathrm{d}x
+=\frac{x^3}{3(b-a)}\bigg\rvert_a^b
+=\frac{b^3-a^3}{3(b-a)}$$
+
+$$Var(U)=E(X^2)-(EX)^2$$
+
+**Standard uniform distribution**:
+
+Let $U\sim Unif(0,1)$
+
+$E(U)=\frac{1}{2}$
+
+$E(U^2)=\frac{1}{3}$
+
+$Var(U)=\frac{1}{3}-\frac{1}{4}=\frac{1}{12}$
+
+**Standard normal distribution**:
+
+Let $Z\sim N(0,1)$
+
+PDF
+$$f(z)=ce^{-z^2/2}$$
+
+Find $c$:
+Suppose
+$$
+\begin{aligned}
+&x(r,\theta)=r\cos\theta\\
+&y(r,\theta)=r\sin\theta
+\end{aligned}
+$$
+Jocobian
+$$
+\begin{aligned}
+J(r,\theta)=
+\begin{vmatrix}
+    \frac{\partial x}{\partial r} & \frac{\partial x}{\partial\theta} \\ 
+    \frac{\partial y}{\partial r} & \frac{\partial y}{\partial\theta}
+  \end{vmatrix}
+  =
+  \begin{vmatrix}
+  \cos\theta & -r\sin\theta\\
+  \sin\theta & r\cos\theta
+  \end{vmatrix}
+  =
+  r
+\end{aligned}
+$$
+Therefore, $\mathrm{d}x\mathrm{d}y=r\mathrm{d}r\mathrm{d}\theta$
+$$
+\begin{aligned}
+&\int_{-\infty}^{\infty}e^{-\frac{x^2}{2}}\mathrm{d}x\int_{-\infty}^{\infty}e^{-\frac{y^2}{2}}\mathrm{d}y\\
+=&\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-\frac{(x^2+y^2)}{2}}\mathrm{d}x\mathrm{d}y\\
+=&\int_{0}^{2\pi}\int_{0}^{\infty}e^{-\frac{r^2}{2}}\mathrm{d}r\mathrm{d}\theta
+\end{aligned}
+$$
+Substituting $u=\frac{r^2}{2}$, $\mathrm{d}u=r\mathrm{d}r$
+
+$$
+=\int_0^{2\pi}\int_0^{\infty}e^{-u}\mathrm{d}u\mathrm{d}\theta=\int_0^{2\pi}\mathrm{d}\theta=2\pi\Rightarrow c=\frac{1}{\sqrt{2\pi}}
+$$
+
+$$E(Z)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}ze^{-\frac{z^2}{2}}\mathrm{d}z=0\space\text{(by symmetry)}$$
+
+$$E(Z^2)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}z^2e^{-\frac{z^2}{2}}\mathrm{d}z=\frac{2}{\sqrt{2\pi}}\int_{0}^{\infty}z\cdot ze^{-\frac{z^2}{2}}\mathrm{d}z$$
+
+Let 
+$$
+\begin{aligned}
+u=z\Rightarrow \mathrm{d}u=\mathrm{d}z\\
+v=-e^{-\frac{z^2}{2}}\Rightarrow \mathrm{d}v=ze^{-\frac{z^2}{2}}\mathrm{d}z
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\mathrm{d}(uv)=u\mathrm{d}v+v\mathrm{d}u\Rightarrow u\mathrm{d}v=\mathrm{d}(uv)-v\mathrm{d}u
+\end{aligned}
+$$
+Then
+$$E(Z^2)=\frac{2}{\sqrt{2\pi}}\int_{0}^{\infty}e^{-\frac{z^2}{2}}\mathrm{d}z=1$$
+
+$$Var(Z)=1$$
+
+CDF 
+
+$$\Phi(z)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{z}e^{-\frac{t^2}{2}}\mathrm{d}t$$
+
+by symmetry, we also have
+
+$$\Phi(Z)=1-\Phi(Z)$$
+$$M(t)=E(e^{tX})
+=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{tz-z^2/2}\mathrm{d}z
+=\frac{e^{t^2/2}}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-(z-T)^2/2}\mathrm{d}z
+=e^{\frac{t^2}{2}}
+$$
+$$E(X)=M'(t)\vert_{t=0}=te^{t^2/2}=0$$
+
+$$E(X^2)=e^{t^2/2}+t^2e^{t^2/2}=1$$
+
+Suppose $Z=\frac{X-\mu}{\sigma}$, then $X=\mu+\sigma Z$.
+
+$E(X)=\mu$
+
+$Var(X)=\sigma^2$
+
+Let $X\sim N(\mu,\sigma^2)$
+
+Find PDF
+
+$$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-(\frac{x-\mu}{\sigma})^2/2}$$
+
+CDF $$P(X\leqslant x)=P(\frac{X-\mu}{\sigma}\leqslant\frac{x-\mu}{\sigma})=\Phi(\frac{x-\mu}{\sigma})$$
+
+**Exponential distribution**
+
+Let $X\sim Expo(\lambda)$
+
+PDF
+
+$$f(x)=\lambda e^{-\lambda x}\quad\text{for}\space x>0$$
+
+We call $\lambda$ the rate parameter.
+
+CDF $$F(x)=P(X\leqslant x)
+=\int_{-\infty}^x\lambda e^{-\lambda t}\mathrm{d}t
+=\int_0^x \lambda e^{-\lambda t}\mathrm{d}t
+=-e^{-\lambda t}\mathrm{d}t
+=1-e^{-\lambda x}\quad x>0$$
+
+Let $Y=\lambda x$, then
+
+$Y\sim Expo(1)$, since
+
+$$f(y)=e^{-y}$$
+
+$$F(y)=P(Y\leqslant y)=P(X\leqslant \frac{y}{\lambda})=1-e^{-y}$$
+
+$$E(Y)=\int_0^{\infty}ye^{-y}\mathrm{d}y=1$$
+
+$$E(Y^2)=\int_0^{\infty}y^2e^{-y}\mathrm{d}y=1$$
+
+$$Var(Y)=E(Y^2)-(EY)^2=1$$
+
+Then for $X=\frac{Y}{\lambda}$
+
+$$E(X)=\frac{1}{\lambda}$$
+
+$$Var(X)=\frac{1}{\lambda^2}$$
+
+$$M(t)=E(e^{tY})=\int_0^{\infty}e^{ty}e^{-y}\mathrm{d}y=\int_0^{\infty}e^{-y(1-t)}\mathrm{d}y=\frac{1}{1-t}\space ,\quad t<1$$
+
+$$\frac{1}{1-t}=\sum_{n=0}^{\infty}t^n=\sum_{n=0}^{\infty}n!\frac{t^n}{n!}$$
+
+$$E(Y^n)=n!$$
+
+$$E(X^n)=\frac{n!}{\lambda^n}$$
+
+**Beta distribution**
+
+Let $X\sim Beta(a,b)$
+
+PDF $$f(x)=cx^{a-1}(1-x)^{b-1}\space,\space 0<x<1,\space\text{for real}\space a>0$$
+
+**Gamma function**
+
+$$\Gamma(a)=\int_0^{\infty}x^ae^{-x}\frac{\mathrm{d}x}{x}\space ,\space\text{for}\space a>0$$
+
+Properties
+
+- $\Gamma(a+1)=a\Gamma(a)$
+
+- $\Gamma(a)=(a-1)!$
+
+if $a$ is positive integer.
+
+Since $$\int_0^{\infty}\frac{1}{\Gamma(a)}\frac{x^ae^{-x}}{x}\mathrm{d}x=1$$
+
+def PDF $$f(x)=\frac{1}{\Gamma(a)}x^{a-1}e^{-x}$$
+
+Let $Y=\frac{X}{\lambda}$, $Y\sim Gamma(a,\lambda)$
+
+$$f(y)=f(x)\frac{\mathrm{d}x}{\mathrm{d}y}
+=\frac{1}{\Gamma(a)}(\lambda y)^{a-1}e^{-\lambda y}\lambda
+=\frac{1}{\Gamma(a)}\frac{(\lambda y)^ae^{-\lambda y}}{y}$$
+
+Let $X\sim Gamma(a,1)$
+
+$$E(x^c)=\frac{1}{\Gamma(a)}\int_0^{\infty}x^cx^ae^{-x}\frac{\mathrm{d}x}{x}
+=\frac{1}{\Gamma(a)}\int_0^{\infty}x^{a+c}e^{-x}\frac{\mathrm{d}x}{x}
+=\frac{\Gamma(a+c)}{\Gamma(a)}$$
+
+if $a+c>0$.
+
+$$E(x)=a$$
+
+$$E(X^2)=a(a+1)$$
+
+$$Var(X)=a$$
+
+$$E(Y)=\frac{a}{\lambda}$$
+
+$$Var(Y)=\frac{a}{\lambda^2}$$
+$$M(t)=E(e^{tX})=\frac{1}{\Gamma(a)}\int_0^{\infty}e^{tx}x^ae^{-x}\frac{\mathrm{d}x}{x}
+=\frac{1}{\Gamma(a)}\int_0^{\infty}x^ae^{-(1-t)x}\frac{\mathrm{d}x}{x}$$
+
+Let $y=(1-t)x$, then $\mathrm{d}y=(1-t)\mathrm{d}x$
+
+$$M(t)=\frac{1}{\Gamma(a)}\int_0^{\infty}(\frac{y}{1-t})^ae^{-y}\frac{\mathrm{d}y}{y}
+=\frac{(1-t)^{-a}}{\Gamma(a)}\int_0^{\infty}y^ae^{-y}\frac{\mathrm{d}y}{y}
+=\frac{1}{(1-t)^a}$$
+
+$$E(X)=M'(t)\bigg\rvert_{t=0}=\frac{a}{(1-t)^{a+1}}\bigg\rvert_{t=0}=a$$
+
+$$E(X^2)=M''(t)\bigg\rvert_{t=0}=\frac{a(a+1)}{(1-t)^{a+2}}=a(a+1)$$
+
+#Law of Large Numbers and Central Limit Theorem 
+
+**Markou inequality**
+
+What is the probability that the value of the r.v. is far from its expectation?
+
+$$P(\lvert{X}\rvert\geqslant a)\leqslant \frac{EX}{a}$$
+
+for any $a>0$. 
+
+Proof:
+
+Let $I$ be the indicator r.v. for the event $|X|\geqslant a$. That is 
+
+$$
+I =
+\begin{cases}
+1, & \text{if event}\space|X|\geqslant a\space\text{occurs} \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+$$aI\leqslant |X|$$
+
+$$aE(I)\leqslant E|X|$$
+
+$$\Rightarrow 1\cdot P(|X|\geqslant a)+0\cdot P(|X|<a)\leqslant\frac{E|X|}{a}$$
+
+**Chehyshev Inequality**
+
+$$P(|X-\mu|\geqslant a)\leqslant\frac{Var(X)}{a^2}$$
+
+Proof:
+
+$$P(|X-\mu|\geqslant a)
+=P(|X-\mu|^2\geqslant a^2)\leqslant\frac{E(|X-\mu|^2)}{a^2}
+=\frac{Var(X)}{a^2}$$
+
+**Laws of Large Numbers**
+
+Let $x_1$, $x_2$, $\cdots$ be i.i.d. 
+
+$$E(X_i)=\mu$$
+
+$$Var(X_i)=\sigma^2$$
+
+$$Var(\sum_{i=1}^{n})=nVar(X_i)$$
+
+Let $\overline{X}_n=\frac{1}{n}\sum_{j=1}^{n}X_j$ (sample mean)
+
+(strong) Law of Large Numbers:
+
+$$\overline{X}_n\rightarrow\mu\quad\text{as}\quad n\rightarrow\infty$$
+
+(week) Law of Large Numbers:
+
+$$P(|\overline{X}_n-\mu|>c)\rightarrow 0\quad\text{as}\quad n\rightarrow\infty$$
+
+Proof:
+
+$$P(|\overline{X}_n-\mu|>c)
+\leqslant\frac{Var(\overline{X}_n)}{c^2}
+=\frac{\frac{1}{n^2}n\sigma^2}{c^2}
+=\frac{\sigma^2}{nc^2}\rightarrow 0$$
+
+$\overline{X}_n\mu\rightarrow0$ with prob. 1, but what does the distribution of $\overline{X}_n$ look like?
+
+**Central Limit Theorem**
+
+$$n^{1/2}\frac{\overline{X}_n-\mu}{\sigma}\rightarrow N(0,1)\quad\text{in distribution}$$
+
+as $n\rightarrow\infty$.
+
+Equivalently
+
+$$\frac{\sum_{j=1}^{n}X_j-n\mu}{\sqrt{n}\sigma}\rightarrow N(0,1)\quad\text{in distribution}$$
+
+Proof:
+
+Let us assume without loss of generality that $\mu=0$, $\sigma=1$.
+
+Let $$S_n=\sum_{j=1}^{n}X_j$$
+
+$$E(S_n)=n\mu$$
+
+$$Var(S_n)=n\sigma^2$$
+
+Assuming MGF $M(t)$ of $X_j$ exists.
+
+We will show that the MGF of $\frac{S_n}{\sqrt{n}}$ converges to the MGF of $N(0,1)$. We have
+
+$$M(t)=E(e^{tS_n/\sqrt{n}})=E(e^{tx_1/\sqrt{n}})\cdots E(e^{tx_n/\sqrt{n}})=[M(\frac{t}{\sqrt{n}})]^n$$
+
+$$
+\begin{aligned}
+&\lim_{n\rightarrow\infty}n\ln M(\frac{t}{\sqrt{n}})\\
+&=\lim_{n\rightarrow\infty}\frac{\ln M(\frac{t}{\sqrt{n}})}{\frac{1}{n}}\\
+\text{Let}\space y=\frac{1}{\sqrt{n}}\\
+&=\lim_{y\rightarrow 0}\frac{\ln M(yt)}{y^2}\\
+\text{L' Hopital's}\\
+&=\lim_{y\rightarrow 0}\frac{tM'(yt)}{2yM(yt)}\\
+&=\frac{t}{2}\lim_{y\rightarrow 0}\frac{M'(yt)}{y}\\
+\text{Since}\space M(0)=1,\space M'(0)=0,\space\text{L' Hopital's}\\
+&=\frac{t^2}{2}\lim_{y\rightarrow 0}\frac{M''(yt)}{1}\\
+&=\frac{t^2}{2}
+\end{aligned}
+$$
+
+Which is the log of $e^{t^2/2}$, the MGF of $N(0,1)$.

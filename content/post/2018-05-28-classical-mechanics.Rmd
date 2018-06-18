@@ -1,0 +1,266 @@
+---
+title: Classical Mechanics
+author: Canyong Guo
+date: '2018-05-28'
+categories:
+  - Physics
+tags:
+  - Classical Physics
+slug: classical-mechanics
+---
+
+# Principle of Least Action ($\delta A=0$)
+
+For arbitary function $A(x,y)$, $1^{st}$ order changes in $A(x,y)$ is
+
+$$\delta A(x,y)=\frac{\partial A}{\partial x}\delta A+\frac{\partial A}{\partial y}\delta y$$
+At stationary point, the derivative of $A$ with repect to $x_i$ vanishes:
+
+$$\frac{\partial A}{\partial x_i}=0$$
+
+for all $x_i$.
+
+Then the condition that $A$ is stationary is 
+
+$$\delta A=0$$
+
+def $$A=\int_{t_1}^{t_2}\mathscr{L}\mathrm{d}t$$
+
+where $$\mathscr{L}=\mathscr{L}(q_i,\dot q_i)$$
+
+The condiction for a stationary action is $$\delta A=0$$
+
+$$
+\begin{aligned}
+\Rightarrow &\int_{t_1}^{t_2}\delta\mathscr{L}\mathrm{d}t=0\\
+&=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i+\frac{\partial\mathscr{L}}{\partial \dot q_i}\delta\dot q_i)\mathrm{d}t\\
+&=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i\mathrm{d}t+
+\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial\dot q_i}\frac{\mathrm{d}\delta q_i}{\mathrm{d}t}\mathrm{d}t\\
+&=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\mathrm{d}t+\frac{\partial\mathscr{L}}{\partial\dot q_i}\delta q_i\bigg\rvert_{t_1}^{t_2}-\int_{t_1}^{t_2}\delta q_i\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i}\mathrm{d}t
+\end{aligned}
+$$
+$\delta q_i$ vanished at the ends of the path ($\delta q_i(t_1)=\delta q_i(t_2)=0$)
+
+$$=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}-\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i})\delta q_i\mathrm{d}t$$
+Since $\delta q_i$ is arbitary, then $\delta A$ is only zero (at order $\delta q$) if 
+
+$$\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i}
+=\frac{\partial\mathscr{L}}{\partial q_i}$$
+
+The path that minizes the action satisfies the Eule-Legrange Equation.
+
+def The Lagrangian $$\mathscr{L}=\frac{1}{2}m{\dot q_i}^2-V(q_i)$$
+
+
+The E-L eqn. is therefore $$\frac{\mathrm{d}}{\mathrm{d}t}m\dot q_i=-\frac{\partial V}{\partial q_i}$$
+
+which is Newton's equation of motion.
+
+def $$p_i=\frac{\partial\mathscr{L}}{\partial\dot q_i}$$
+
+where $p_i$ is called the generalized momentum, $\frac{\partial\mathscr{L}}{\partial\dot q_i}$ is called the generalized momentum conjugate to $q_i$.
+
+# Symmmetries and Consenvation Laws ($\delta\mathscr{L}$)
+
+Asymmetry is an active coordinate transform that does change the value of the Lagrangian.
+
+**Infinitesimal Transformation**
+
+Let's change the coordinate $q_i$ by a small amount $f_i(q)\epsilon$.
+
+$$q_i\rightarrow q_i+f_i(q_i)\epsilon$$
+
+$$\delta q_i=f_i(q)\epsilon$$
+
+where $f_i(q)$ means that the small shift of the coordinates may itself depend on the value of the coordinates. $\epsilon$ is an infinitesimal parameter.
+
+$$
+\begin{aligned}
+\delta\mathscr{L}(q_i,\dot q_i)&=\sum_i(\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i+\frac{\partial\mathscr{L}}{\partial\dot q_i}\delta\dot q_i)\\
+&=\sum_i(\dot p_i\delta q_i+p_i\delta\dot q_i)\\
+&=\frac{\mathrm{d}}{\mathrm{d}t}\sum_ip_i\delta q_i\\
+&=\epsilon\frac{\mathrm{d}}{\mathrm{d}t}\sum_ip_if_i(q)
+\end{aligned}
+$$
+
+def Noether's charge $$Q=\sum_ip_if_i(q)$$
+
+$$\delta\mathscr{L}=\frac{\mathrm{d}}{\mathrm{d}t}Q$$
+
+
+If symmetry, $\delta\mathscr{L}=0$, then $Q$ is a conserved quantity.
+
+- Translation Invariant and Conservation of Momentum
+
+e.g. Two particles on a line
+
+The Lagrangian is invariant under the change (translation).
+
+$$q_1\rightarrow q_1+\delta\Rightarrow f_1(q)=1$$
+
+$$q_2\rightarrow q_2+\delta\Rightarrow f_2(q)=1$$
+
+Let's calulate the Noether's Charge:
+
+$$Q=\sum_ip_if_i(q)=p_1+p_2$$
+
+$$\frac{\mathrm{d}}{\mathrm{d}t}(p_1+p_2)=0$$
+
+Momentum conservation is a result of translation invariance.
+
+- Rotation Invariant and Conservation of Angular Momentum
+
+In $\mathbb{R}^2$, rotating a vector $(x,y)$ by a counterclockwise angle $\theta$ in a fixed coordinate system
+
+$$x'=x\cos\theta-y\sin\theta$$
+
+$$y'=x\sin\theta+y\cos\theta$$
+
+$$\theta=\delta$$
+
+$$\cos\theta=1-\frac{\delta^2}{2}$$
+$$\sin\theta=\delta$$
+
+$$x'=x-y\delta\Rightarrow\delta x=-y\delta\Rightarrow f_x(q)=-y$$
+
+$$y'=x\delta +y\Rightarrow\delta y=x\delta\Rightarrow f_y(q)=x$$
+
+$$Q=\sum_ip_if_i(q)=-yp_x+xp_y\equiv L_z$$
+
+def $$\vec{L}=\vec{r}\times\vec{P}$$
+
+where $\vec{L}$ is called angualr momentum.
+
+- Time-translation Symmetry and Conservation of Energy ($\frac{\mathrm{d}\mathscr{L}}{\mathrm{d}t}=0$) 
+
+A system is time-translation invariant if there is no explicit time dependence in its Lagrangian.
+
+If LAgrangian has explicit time dependence,
+
+$$
+\begin{aligned}
+\frac{\mathrm{d}\mathscr{L}}{\mathrm{d}t}&=\sum_i(\frac{\partial\mathscr{L}}{\partial q_i}\dot q_i+\frac{\partial\mathscr{L}}{\partial\dot q_i}\ddot q_i)+\frac{\partial\mathscr{L}}{\partial t}\\
+&=\sum_i(\dot p_i\dot q_i+p_i\ddot q_i)+\frac{\partial\mathscr{L}}{\partial t}
+\end{aligned}
+$$
+
+$$\Rightarrow\frac{\mathrm{d}}{\mathrm{d}t}(\sum_ip_i\dot q_i-\mathscr{L})=-\frac{\partial\mathscr{L}}{\partial t}$$
+
+def $$H=\sum_ip_i\dot q_i-\mathscr{L}$$
+
+$$\frac{\mathrm{d}H}{\mathrm{d}t}=-\frac{\partial\mathscr{L}}{\partial t}$$
+
+$H$ varies with time only if the Lagrangian has an explicit time dependence. In other words, if a system is time-translation invariant, the quantity $H$ is conserved.
+
+$$
+\begin{aligned}
+H&=p_i\dot q_i-\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
+&=m{\dot q_i}^2-\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
+&=\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
+&=T+V
+\end{aligned}
+$$
+
+**Hamiltonian equals Energy!!!**
+
+#Model and Application
+
+**Two body problem**
+
+$$\mathscr{L}=\frac{1}{2}m_1\dot{\mathbf{x}}_1^2+\frac{1}{2}m_2\dot{\mathbf{x}}_2^2+U(\mathbf{x_1}-\mathbf{x_2})$$
+
+The equations of motion
+
+$$\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{x}}_1}
+=\frac{\partial\mathscr{L}}{\partial\mathbf{x}_1}
+\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}m_1\dot{\mathbf{x}}_1
+=-\frac{\partial U(\mathbf{x}_1-\mathbf{x}_2)}{\partial\mathbf{x_1}}$$
+
+$$\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{x}}_2}
+=\frac{\partial\mathscr{L}}{\partial\mathbf{x}_2}
+\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}m_2\dot{\mathbf{x}}_2
+=-\frac{\partial U(\mathbf{x}_1-\mathbf{x}_2)}{\partial\mathbf{x_2}}$$
+
+Since $$\frac{\partial U}{\partial\mathbf{x}_1}=-\frac{\partial U}{\mathbf{x}_2}\quad\text{(Newton's Thrid Law)}$$
+
+Then $$\frac{\mathrm{d}}{\mathrm{d}t}(\mathbf{p_1}+\mathbf{p_2})=0$$
+
+$\Rightarrow$ conservation of momentum
+
+CM frame
+
+$$\mathbf{X}=\frac{m_1\mathbf{x_1}+m_2\mathbf{x_2}}{M}$$
+
+where $M=m_1+m_2$.
+
+$$\mathbf{x}=\mathbf{x_1}-\mathbf{x_2}$$
+
+$$\mathscr{L}(\textbf{x}_1,\textbf{x}_2,\dot{\mathbf{x}}_1,\dot{\mathbf{x}}_2)\rightarrow \mathscr{L}(\dot{\mathbf{X}},\mathbf{x},\dot{\mathbf{x}})$$
+
+$$M\mathbf{X}=m_1\mathbf{x}_1+m_2(\mathbf{x}_2-\mathbf{x})=M\mathbf{x}_1-m_2\mathbf{x}$$
+
+$$\Rightarrow\mathbf{x}_1=\mathbf{X}+\frac{m_2}{M}\mathbf{x}$$
+
+$$\Rightarrow\dot{\mathbf{x}}_1=\dot{\mathbf{X}}+\frac{m_2}{M}\dot{\mathbf{x}}$$
+
+$$M\mathbf{X}=m_1(\mathbf{x}+\mathbf{x}_2)+m_2\mathbf{x}_2=M\mathbf{x}_2+m_1\mathbf{x}$$
+
+$$\Rightarrow\mathbf{x}_2=\mathbf{X}-\frac{m_2}{M}\mathbf{x}$$
+
+$$\Rightarrow\dot{\mathbf{x}}_2=\dot{\mathbf{X}}-\frac{m_2}{M}\dot{\mathbf{x}}$$
+
+$$\mathscr{L}=\frac{1}{2}m_1(\dot{\mathbf{X}}-\frac{m_2}{M}\dot{\mathbf{x}})^2
++\frac{1}{2}m_2(\dot{\mathbf{X}}+\frac{m_2}{M}\dot{\mathbf{x}})^2-U(\mathbf{x})
+=\frac{1}{2}M\dot{\mathbf{X}}^2+\frac{1}{2}m\dot{\mathbf{x}}^2-U(\mathbf{x})$$
+
+where $m=\frac{m_1m_2}{M}$
+
+The equations of motion
+
+$$\frac{\mathbf{d}}{\mathbf{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{X}}}
+=\frac{\partial\mathscr{L}}{\partial\mathbf{X}}
+\Rightarrow\frac{\mathrm{d}}{\mathrm{d}t}M\dot{\mathbf{X}}=0
+\Rightarrow M\dot{\mathbf{X}}=const.$$
+
+$$\frac{\mathbf{d}}{\mathbf{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{x}}}
+=\frac{\partial\mathscr{L}}{\partial\mathbf{x}}
+\Rightarrow\frac{\mathbf{d}}{\mathbf{d}t}m\dot{\mathbf{x}}=-\frac{\partial U}{\partial\mathbf{x}}$$
+
+Then $$\mathscr{L}=\frac{1}{2}m\dot{\textbf{x}}^2-U(\mathbf{x})$$
+
+Polar coordintes
+
+Suppose $\mathscr{L}=\frac{1}{2}m\dot{\mathrm{r}}^2-U(\mathrm{r})$
+
+where
+
+$$\textbf{r}=x\hat{x}+y\hat{y}=r\hat{r}$$
+
+$$\hat{r}=\cos\theta\hat{x}+\sin\theta\hat{y}$$
+
+$$\hat{\theta}=-\sin\theta\hat{x}+\cos\theta\hat{y}$$
+
+$$\frac{\mathrm{d}\hat{r}}{\mathrm{d}t}=-\dot{\theta}\sin\theta+\dot{\theta}\cos\theta\hat{y}=\dot{\theta}\hat{\theta}$$
+
+$$\dot{\mathbf{r}}=\frac{\mathbf{d}\textbf{r}}{\mathbf{d}t}=\frac{\mathrm{d}r}{\mathrm{d}t}\hat{r}+r\frac{\mathrm{d}\hat{r}}{\mathrm{d}t}=\dot{r}\hat{r}+r\dot{\theta}\hat{\theta}$$
+
+$$\mathscr{L}=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)-U(r)$$
+
+The equations of motion
+
+$$\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{r}}=\frac{\partial\mathscr{L}}{\partial r}\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}m\dot{r}=mr\dot{\theta}^2-\frac{\partial U}{\partial r}$$
+
+Forces in the radial direction.
+
+$$\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\theta}}=\frac{\partial\mathscr{L}}{\partial\theta}\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}mr^2\dot{\theta}=0$$
+
+Forces in the $\theta$ direction.
+
+def $$L=mr^2\dot{\theta}$$
+
+Since $\frac{\partial\mathscr{L}}{\partial\theta}=0$, so the system is rotation invariant $\Rightarrow$ conservation of angular momentum
+
+$$m\ddot{r}=mr\dot{\theta}-\frac{\partial U}{\partial r}=mr(\frac{L}{mr^2})^2-\frac{\partial U}{\partial r}=\frac{L^2}{mr^3}-\frac{\partial U}{\partial r}$$
+
+$$H=\sum_ip_i\dot{q}_i-\mathscr{L}=m\dot{r}^2+mr^2\dot{\theta}^2-\frac{1}{2}m\dot{r}^2-\frac{1}{2}mr^2\dot{\theta}^2+U(r)=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+U(r)$$
+

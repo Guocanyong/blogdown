@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Classical Physics on A Hugo website</title>
+    <link>/tags/classical-physics/</link>
+    <description>Recent content in Classical Physics on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/classical-physics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Classical Mechanics</title>
+      <link>/2018/05/28/classical-mechanics/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/28/classical-mechanics/</guid>
+      <description>Principle of Least Action (\(\delta A=0\))For arbitary function \(A(x,y)\), \(1^{st}\) order changes in \(A(x,y)\) is
+\[\delta A(x,y)=\frac{\partial A}{\partial x}\delta A+\frac{\partial A}{\partial y}\delta y\] At stationary point, the derivative of \(A\) with repect to \(x_i\) vanishes:
+\[\frac{\partial A}{\partial x_i}=0\]
+for all \(x_i\).
+Then the condition that \(A\) is stationary is
+\[\delta A=0\]
+def \[A=\int_{t_1}^{t_2}\mathscr{L}\mathrm{d}t\]
+where \[\mathscr{L}=\mathscr{L}(q_i,\dot q_i)\]
+The condiction for a stationary action is \[\delta A=0\]
+\[\begin{aligned}\Rightarrow &amp;amp;\int_{t_1}^{t_2}\delta\mathscr{L}\mathrm{d}t=0\\&amp;amp;=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i+\frac{\partial\mathscr{L}}{\partial \dot q_i}\delta\dot q_i)\mathrm{d}t\\&amp;amp;=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i\mathrm{d}t+\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial\dot q_i}\frac{\mathrm{d}\delta q_i}{\mathrm{d}t}\mathrm{d}t\\&amp;amp;=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\mathrm{d}t+\frac{\partial\mathscr{L}}{\partial\dot q_i}\delta q_i\bigg\rvert_{t_1}^{t_2}-\int_{t_1}^{t_2}\delta q_i\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i}\mathrm{d}t\end{aligned}\] \(\delta q_i\) vanished at the ends of the path (\(\delta q_i(t_1)=\delta q_i(t_2)=0\))</description>
+    </item>
+    
+  </channel>
+</rss>

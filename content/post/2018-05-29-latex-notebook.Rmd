@@ -1,0 +1,85 @@
+---
+title: Latex Notebook
+author: Canyong Guo
+date: '2018-05-29'
+slug: latex-notebook
+categories:
+  - Latex
+tags:
+  - Latex
+---
+#Mthematical Notation 
+
+$\leqslant$ 
+``
+\leqslant
+``
+
+$\sim$
+``
+\sim
+``
+
+$\equiv$
+``
+\equiv
+``
+
+$\binom{n}{k}$
+``
+\binom{n}{k}
+``
+
+$\mathbb{R}$ 
+``
+\mathbb{R}
+``
+
+$\mathscr{L}$
+``
+\mathscr{L}
+``
+
+$\mathrm{d}x$
+``
+\mathrm{d}x
+``
+
+$\frac{x}{2}\bigg\rvert_a^b$
+``
+\frac{x}{2}\bigg\rvert_a^b
+``
+
+$$
+\begin{aligned}
+J=
+\begin{vmatrix}
+    a & b \\ 
+    c & d
+  \end{vmatrix}
+\end{aligned}
+$$
+``
+\begin{aligned}
+J=
+\begin{vmatrix}
+    a & b \\ 
+    c & d
+  \end{vmatrix}
+\end{aligned}
+``
+
+$$
+f(x) =
+\begin{cases}
+c, & a\leqslant x\leqslant b \\
+0, & \text{otherwise}
+\end{cases}
+$$
+``
+f(x) =
+\begin{cases}
+c, & a\leqslant x\leqslant b \\
+0, & \text{otherwise}
+\end{cases}
+``
