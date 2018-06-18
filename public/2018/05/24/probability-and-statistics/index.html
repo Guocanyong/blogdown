@@ -52,7 +52,7 @@
 
   <article class="article">
     
-    <span class="article-duration">5 min read</span>
+    <span class="article-duration">6 min read</span>
     
 
     <h1 class="article-title">Probability and Statistics</h1>
@@ -75,13 +75,15 @@
 <p><strong>(1)</strong> <span class="math display">\[P(\phi)=0\]</span> <span class="math display">\[P(S)=1\]</span></p>
 <p>where <span class="math inline">\(\phi\)</span> is the null event.</p>
 <p><strong>(2)</strong> <span class="math display">\[P(\cup_{i=1}^{n} A_i)=\sum_{i=1}^{n}P(A_i)-\sum_{i&lt;j}P(A_i\cap A_j)+\sum_{i&lt;j&lt;k}P(A_i\cap A_j\cap A_k)-\cdots+(-1)^{n+1}P(\cap_{i=1}^{n}A_i)\]</span></p>
-<p>where <span class="math inline">\(P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1})\)</span>.</p>
+<p>where <span class="math display">\[
+P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1}).
+\]</span></p>
 <ul>
 <li><span class="math inline">\(P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)\)</span></li>
 </ul>
-<p><span class="math inline">\(\Rightarrow\)</span> (Bayes’ Theorem)<span class="math display">\[\frac{P(A\mid B)P(A)}{P(B)}\]</span></p>
-<p>if <span class="math inline">\(P(B)&gt;0\)</span></p>
-<p>What is <span class="math inline">\(P(A\mid B)\)</span>?</p>
+<p><span class="math inline">\(\Rightarrow\)</span> (Bayes’ Theorem)</p>
+<p><span class="math display">\[P(A\mid B)=\frac{P(A\mid B)P(A)}{P(B)}\]</span></p>
+<p>What is <span class="math inline">\(P(A\mid B)\)</span> if <span class="math inline">\(P(B)&gt;0\)</span>?</p>
 <p>Conditional probability: update prob./beliefs/uncertainty based on new evidence.</p>
 <p><strong>“Conditioning is the Soul of Statistics”.</strong></p>
 <ul>
@@ -287,7 +289,11 @@ J(r,\theta)=
 <p><span class="math display">\[E(Z^2)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}z^2e^{-\frac{z^2}{2}}\mathrm{d}z=\frac{2}{\sqrt{2\pi}}\int_{0}^{\infty}z\cdot ze^{-\frac{z^2}{2}}\mathrm{d}z\]</span></p>
 <p>Let <span class="math display">\[
 \begin{aligned}
-u=z\Rightarrow \mathrm{d}u=\mathrm{d}z\\
+u=z\Rightarrow \mathrm{d}u=\mathrm{d}z
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
 v=-e^{-\frac{z^2}{2}}\Rightarrow \mathrm{d}v=ze^{-\frac{z^2}{2}}\mathrm{d}z
 \end{aligned}
 \]</span></p>
@@ -425,16 +431,23 @@ I =
 <p>Assuming MGF <span class="math inline">\(M(t)\)</span> of <span class="math inline">\(X_j\)</span> exists.</p>
 <p>We will show that the MGF of <span class="math inline">\(\frac{S_n}{\sqrt{n}}\)</span> converges to the MGF of <span class="math inline">\(N(0,1)\)</span>. We have</p>
 <p><span class="math display">\[M(t)=E(e^{tS_n/\sqrt{n}})=E(e^{tx_1/\sqrt{n}})\cdots E(e^{tx_n/\sqrt{n}})=[M(\frac{t}{\sqrt{n}})]^n\]</span></p>
-<p><span class="math display">\[
+<p>Taking the log <span class="math display">\[
 \begin{aligned}
 &amp;\lim_{n\rightarrow\infty}n\ln M(\frac{t}{\sqrt{n}})\\
-&amp;=\lim_{n\rightarrow\infty}\frac{\ln M(\frac{t}{\sqrt{n}})}{\frac{1}{n}}\\
-\text{Let}\space y=\frac{1}{\sqrt{n}}\\
-&amp;=\lim_{y\rightarrow 0}\frac{\ln M(yt)}{y^2}\\
-\text{L&#39; Hopital&#39;s}\\
+&amp;=\lim_{n\rightarrow\infty}\frac{\ln M(\frac{t}{\sqrt{n}})}{\frac{1}{n}}
+\end{aligned}
+\]</span> Let <span class="math inline">\(y=\frac{1}{\sqrt{n}}\)</span> <span class="math display">\[
+\begin{aligned}
+&amp;=\lim_{y\rightarrow 0}\frac{\ln M(yt)}{y^2}
+\end{aligned}
+\]</span> L’ Hopital’s <span class="math display">\[
+\begin{aligned}
 &amp;=\lim_{y\rightarrow 0}\frac{tM&#39;(yt)}{2yM(yt)}\\
-&amp;=\frac{t}{2}\lim_{y\rightarrow 0}\frac{M&#39;(yt)}{y}\\
-\text{Since}\space M(0)=1,\space M&#39;(0)=0,\space\text{L&#39; Hopital&#39;s}\\
+&amp;=\frac{t}{2}\lim_{y\rightarrow 0}\frac{M&#39;(yt)}{y}
+\end{aligned}
+\]</span></p>
+<p>Since <span class="math inline">\(M(0)=1\)</span>, <span class="math inline">\(M&#39;(0)=0\)</span>, L’ Hopital’s <span class="math display">\[
+\begin{aligned}
 &amp;=\frac{t^2}{2}\lim_{y\rightarrow 0}\frac{M&#39;&#39;(yt)}{1}\\
 &amp;=\frac{t^2}{2}
 \end{aligned}

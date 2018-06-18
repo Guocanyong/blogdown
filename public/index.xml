@@ -25,8 +25,7 @@
 \(\mathscr{L}\) \mathscr{L}
 \(\mathrm{d}x\) \mathrm{d}x
 \(\frac{x}{2}\bigg\rvert_a^b\) \frac{x}{2}\bigg\rvert_a^b
-\[\begin{aligned}J=\begin{vmatrix}a &amp;amp; b \\ c &amp;amp; d\end{vmatrix}\end{aligned}\] \begin{aligned} J= \begin{vmatrix} a &amp;amp; b \\ c &amp;amp; d \end{vmatrix} \end{aligned}
-\[f(x) =\begin{cases}c, &amp;amp; a\leqslant x\leqslant b \\0, &amp;amp; \text{otherwise}\end{cases}\] f(x) = \begin{cases} c, &amp;amp; a\leqslant x\leqslant b \\ 0, &amp;amp; \text{otherwise} \end{cases}</description>
+</description>
     </item>
     
     <item>
@@ -35,7 +34,8 @@
       <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/05/29/r-notebook/</guid>
-      <description></description>
+      <description>Open current working directory
+&amp;gt; system(&amp;quot;open .&amp;quot;)</description>
     </item>
     
     <item>
@@ -71,11 +71,10 @@ Fundamental concepts in probability and statisticsA sample space \(S\)
 (1) \[P(\phi)=0\] \[P(S)=1\]
 where \(\phi\) is the null event.
 (2) \[P(\cup_{i=1}^{n} A_i)=\sum_{i=1}^{n}P(A_i)-\sum_{i&amp;lt;j}P(A_i\cap A_j)+\sum_{i&amp;lt;j&amp;lt;k}P(A_i\cap A_j\cap A_k)-\cdots+(-1)^{n+1}P(\cap_{i=1}^{n}A_i)\]
-where \(P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1})\).
-\(P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)\)\(\Rightarrow\) (Bayes’ Theorem)\[\frac{P(A\mid B)P(A)}{P(B)}\]
-if \(P(B)&amp;gt;0\)
-What is \(P(A\mid B)\)?
-Conditional probability: update prob.</description>
+where \[P(\cap_{i=1}^{n}A_i)=P(A_1)P(A_2\mid A_1)P(A_3\mid A_1,A_2)\cdots P(A_n\mid A_1,\cdots A_{n-1}).\]
+\(P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B)\)\(\Rightarrow\) (Bayes’ Theorem)
+\[P(A\mid B)=\frac{P(A\mid B)P(A)}{P(B)}\]
+What is \(P(A\mid B)\) if \(P(B)&amp;gt;0\)?</description>
     </item>
     
     <item>

@@ -25,8 +25,7 @@
 \(\mathscr{L}\) \mathscr{L}
 \(\mathrm{d}x\) \mathrm{d}x
 \(\frac{x}{2}\bigg\rvert_a^b\) \frac{x}{2}\bigg\rvert_a^b
-\[\begin{aligned}J=\begin{vmatrix}a &amp;amp; b \\ c &amp;amp; d\end{vmatrix}\end{aligned}\] \begin{aligned} J= \begin{vmatrix} a &amp;amp; b \\ c &amp;amp; d \end{vmatrix} \end{aligned}
-\[f(x) =\begin{cases}c, &amp;amp; a\leqslant x\leqslant b \\0, &amp;amp; \text{otherwise}\end{cases}\] f(x) = \begin{cases} c, &amp;amp; a\leqslant x\leqslant b \\ 0, &amp;amp; \text{otherwise} \end{cases}</description>
+</description>
     </item>
     
   </channel>

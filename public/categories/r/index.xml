@@ -17,7 +17,8 @@
       <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/05/29/r-notebook/</guid>
-      <description></description>
+      <description>Open current working directory
+&amp;gt; system(&amp;quot;open .&amp;quot;)</description>
     </item>
     
   </channel>
