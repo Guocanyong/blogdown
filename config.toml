@@ -12,9 +12,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [[menu.main]]
     name = "About"
     url = "/about/"
-[[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/Guocanyong/blogdown"
+#[[menu.main]]
+    #name = "GitHub"
+    #url = "https://github.com/Guocanyong/blogdown"
 #[[menu.main]]
     #name = "Twitter"
     #url = "https://twitter.com/rstudio"
@@ -31,9 +31,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     MathJaxCDN = "//cdn.bootcss.com"
     MathJaxVersion = "2.7.1"
 
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
+    #[params.logo]
+    #url = "1.webp"
+    #width = 50
+    #height = 50
+    #alt = "Logo"
 

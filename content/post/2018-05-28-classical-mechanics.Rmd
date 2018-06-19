@@ -13,7 +13,7 @@ slug: classical-mechanics
 
 For arbitary function $A(x,y)$, $1^{st}$ order changes in $A(x,y)$ is
 
-$$\delta A(x,y)=\frac{\partial A}{\partial x}\delta A+\frac{\partial A}{\partial y}\delta y$$
+$$\delta A(x,y)=\frac{\partial A}{\partial x}\delta x+\frac{\partial A}{\partial y}\delta y$$
 At stationary point, the derivative of $A$ with repect to $x_i$ vanishes:
 
 $$\frac{\partial A}{\partial x_i}=0$$
@@ -32,7 +32,7 @@ The condiction for a stationary action is $$\delta A=0$$
 
 $$
 \begin{aligned}
-\Rightarrow &\int_{t_1}^{t_2}\delta\mathscr{L}\mathrm{d}t=0\\
+&\Rightarrow\int_{t_1}^{t_2}\delta\mathscr{L}\mathrm{d}t=0\\
 &=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i+\frac{\partial\mathscr{L}}{\partial \dot q_i}\delta\dot q_i)\mathrm{d}t\\
 &=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i\mathrm{d}t+
 \int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial\dot q_i}\frac{\mathrm{d}\delta q_i}{\mathrm{d}t}\mathrm{d}t\\
@@ -47,12 +47,12 @@ Since $\delta q_i$ is arbitary, then $\delta A$ is only zero (at order $\delta q
 $$\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i}
 =\frac{\partial\mathscr{L}}{\partial q_i}$$
 
-The path that minizes the action satisfies the Eule-Legrange Equation.
+The path that minimizes the action satisfies the Eule-Legrange Equation.
 
-def The Lagrangian $$\mathscr{L}=\frac{1}{2}m{\dot q_i}^2-V(q_i)$$
+def the Lagrangian $$\mathscr{L}=\frac{1}{2}m{\dot q_i}^2-V(q_i)$$
 
 
-The E-L eqn. is therefore $$\frac{\mathrm{d}}{\mathrm{d}t}m\dot q_i=-\frac{\partial V}{\partial q_i}$$
+The Eule-Legrange equation is therefore $$\frac{\mathrm{d}}{\mathrm{d}t}m\dot q_i=-\frac{\partial V}{\partial q_i}$$
 
 which is Newton's equation of motion.
 
@@ -66,7 +66,7 @@ Asymmetry is an active coordinate transform that does change the value of the La
 
 **Infinitesimal Transformation**
 
-Let's change the coordinate $q_i$ by a small amount $f_i(q)\epsilon$.
+Let us change the coordinate $q_i$ by a small amount $f_i(q)\epsilon$.
 
 $$q_i\rightarrow q_i+f_i(q_i)\epsilon$$
 
@@ -92,7 +92,7 @@ If symmetry, $\delta\mathscr{L}=0$, then $Q$ is a conserved quantity.
 
 - Translation Invariant and Conservation of Momentum
 
-e.g. Two particles on a line
+*e.g.* Two particles on a line
 
 The Lagrangian is invariant under the change (translation).
 
@@ -100,7 +100,7 @@ $$q_1\rightarrow q_1+\delta\Rightarrow f_1(q)=1$$
 
 $$q_2\rightarrow q_2+\delta\Rightarrow f_2(q)=1$$
 
-Let's calulate the Noether's Charge:
+Let us calulate the Noether's Charge:
 
 $$Q=\sum_ip_if_i(q)=p_1+p_2$$
 
@@ -135,7 +135,7 @@ where $\vec{L}$ is called angualr momentum.
 
 A system is time-translation invariant if there is no explicit time dependence in its Lagrangian.
 
-If LAgrangian has explicit time dependence,
+If the Lagrangian has explicit time dependence,
 
 $$
 \begin{aligned}
@@ -187,7 +187,7 @@ Then $$\frac{\mathrm{d}}{\mathrm{d}t}(\mathbf{p_1}+\mathbf{p_2})=0$$
 
 $\Rightarrow$ conservation of momentum
 
-CM frame
+In center of mass frame:
 
 $$\mathbf{X}=\frac{m_1\mathbf{x_1}+m_2\mathbf{x_2}}{M}$$
 
@@ -197,7 +197,7 @@ $$\mathbf{x}=\mathbf{x_1}-\mathbf{x_2}$$
 
 $$\mathscr{L}(\textbf{x}_1,\textbf{x}_2,\dot{\mathbf{x}}_1,\dot{\mathbf{x}}_2)\rightarrow \mathscr{L}(\dot{\mathbf{X}},\mathbf{x},\dot{\mathbf{x}})$$
 
-$$M\mathbf{X}=m_1\mathbf{x}_1+m_2(\mathbf{x}_2-\mathbf{x})=M\mathbf{x}_1-m_2\mathbf{x}$$
+$$M\mathbf{X}=m_1\mathbf{x}_1+m_2(\mathbf{x}_1-\mathbf{x})=M\mathbf{x}_1-m_2\mathbf{x}$$
 
 $$\Rightarrow\mathbf{x}_1=\mathbf{X}+\frac{m_2}{M}\mathbf{x}$$
 
@@ -213,7 +213,7 @@ $$\mathscr{L}=\frac{1}{2}m_1(\dot{\mathbf{X}}-\frac{m_2}{M}\dot{\mathbf{x}})^2
 +\frac{1}{2}m_2(\dot{\mathbf{X}}+\frac{m_2}{M}\dot{\mathbf{x}})^2-U(\mathbf{x})
 =\frac{1}{2}M\dot{\mathbf{X}}^2+\frac{1}{2}m\dot{\mathbf{x}}^2-U(\mathbf{x})$$
 
-where $m=\frac{m_1m_2}{M}$
+where $m=\frac{m_1m_2}{M}$.
 
 The equations of motion
 
@@ -228,7 +228,7 @@ $$\frac{\mathbf{d}}{\mathbf{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{
 
 Then $$\mathscr{L}=\frac{1}{2}m\dot{\textbf{x}}^2-U(\mathbf{x})$$
 
-Polar coordintes
+Rewrite the above equation in polar coordintes：
 
 Suppose $\mathscr{L}=\frac{1}{2}m\dot{\mathrm{r}}^2-U(\mathrm{r})$
 
@@ -250,11 +250,11 @@ The equations of motion
 
 $$\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{r}}=\frac{\partial\mathscr{L}}{\partial r}\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}m\dot{r}=mr\dot{\theta}^2-\frac{\partial U}{\partial r}$$
 
-Forces in the radial direction.
+which is the forces in the radial direction.
 
 $$\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\theta}}=\frac{\partial\mathscr{L}}{\partial\theta}\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}mr^2\dot{\theta}=0$$
 
-Forces in the $\theta$ direction.
+which is the forces in the $\theta$ direction.
 
 def $$L=mr^2\dot{\theta}$$
 
@@ -264,3 +264,6 @@ $$m\ddot{r}=mr\dot{\theta}-\frac{\partial U}{\partial r}=mr(\frac{L}{mr^2})^2-\f
 
 $$H=\sum_ip_i\dot{q}_i-\mathscr{L}=m\dot{r}^2+mr^2\dot{\theta}^2-\frac{1}{2}m\dot{r}^2-\frac{1}{2}mr^2\dot{\theta}^2+U(r)=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+U(r)$$
 
+**References**
+
+Leonard Susskind and George Hrabovsky. *The theoretical minimum: what you need to know to start doing physics*. Basic Books, 2014.

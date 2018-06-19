@@ -30,17 +30,15 @@
       <header class="header">
         <nav class="nav">
   <a href="/" class="nav-logo">
-    <img src="/images/logo.png"
-         width="50"
-         height="50"
-         alt="Logo">
+    <img src="/images/%3cnil%3e"
+         width=""
+         height=""
+         alt="">
   </a>
 
   <ul class="nav-links">
     
     <li><a href="/about/">About</a></li>
-    
-    <li><a href="https://github.com/Guocanyong/blogdown">GitHub</a></li>
     
   </ul>
 </nav>
@@ -65,7 +63,7 @@
       <div id="principle-of-least-action-delta-a0" class="section level1">
 <h1>Principle of Least Action (<span class="math inline">\(\delta A=0\)</span>)</h1>
 <p>For arbitary function <span class="math inline">\(A(x,y)\)</span>, <span class="math inline">\(1^{st}\)</span> order changes in <span class="math inline">\(A(x,y)\)</span> is</p>
-<p><span class="math display">\[\delta A(x,y)=\frac{\partial A}{\partial x}\delta A+\frac{\partial A}{\partial y}\delta y\]</span> At stationary point, the derivative of <span class="math inline">\(A\)</span> with repect to <span class="math inline">\(x_i\)</span> vanishes:</p>
+<p><span class="math display">\[\delta A(x,y)=\frac{\partial A}{\partial x}\delta x+\frac{\partial A}{\partial y}\delta y\]</span> At stationary point, the derivative of <span class="math inline">\(A\)</span> with repect to <span class="math inline">\(x_i\)</span> vanishes:</p>
 <p><span class="math display">\[\frac{\partial A}{\partial x_i}=0\]</span></p>
 <p>for all <span class="math inline">\(x_i\)</span>.</p>
 <p>Then the condition that <span class="math inline">\(A\)</span> is stationary is</p>
@@ -75,7 +73,7 @@
 <p>The condiction for a stationary action is <span class="math display">\[\delta A=0\]</span></p>
 <p><span class="math display">\[
 \begin{aligned}
-\Rightarrow &amp;\int_{t_1}^{t_2}\delta\mathscr{L}\mathrm{d}t=0\\
+&amp;\Rightarrow\int_{t_1}^{t_2}\delta\mathscr{L}\mathrm{d}t=0\\
 &amp;=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i+\frac{\partial\mathscr{L}}{\partial \dot q_i}\delta\dot q_i)\mathrm{d}t\\
 &amp;=\int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial q_i}\delta q_i\mathrm{d}t+
 \int_{t_1}^{t_2}\frac{\partial\mathscr{L}}{\partial\dot q_i}\frac{\mathrm{d}\delta q_i}{\mathrm{d}t}\mathrm{d}t\\
@@ -85,9 +83,9 @@
 <p><span class="math display">\[=\int_{t_1}^{t_2}(\frac{\partial\mathscr{L}}{\partial q_i}-\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i})\delta q_i\mathrm{d}t\]</span> Since <span class="math inline">\(\delta q_i\)</span> is arbitary, then <span class="math inline">\(\delta A\)</span> is only zero (at order <span class="math inline">\(\delta q\)</span>) if</p>
 <p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot q_i}
 =\frac{\partial\mathscr{L}}{\partial q_i}\]</span></p>
-<p>The path that minizes the action satisfies the Eule-Legrange Equation.</p>
-<p>def The Lagrangian <span class="math display">\[\mathscr{L}=\frac{1}{2}m{\dot q_i}^2-V(q_i)\]</span></p>
-<p>The E-L eqn. is therefore <span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}m\dot q_i=-\frac{\partial V}{\partial q_i}\]</span></p>
+<p>The path that minimizes the action satisfies the Eule-Legrange Equation.</p>
+<p>def the Lagrangian <span class="math display">\[\mathscr{L}=\frac{1}{2}m{\dot q_i}^2-V(q_i)\]</span></p>
+<p>The Eule-Legrange equation is therefore <span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}m\dot q_i=-\frac{\partial V}{\partial q_i}\]</span></p>
 <p>which is Newton’s equation of motion.</p>
 <p>def <span class="math display">\[p_i=\frac{\partial\mathscr{L}}{\partial\dot q_i}\]</span></p>
 <p>where <span class="math inline">\(p_i\)</span> is called the generalized momentum, <span class="math inline">\(\frac{\partial\mathscr{L}}{\partial\dot q_i}\)</span> is called the generalized momentum conjugate to <span class="math inline">\(q_i\)</span>.</p>
@@ -96,7 +94,7 @@
 <h1>Symmmetries and Consenvation Laws (<span class="math inline">\(\delta\mathscr{L}\)</span>)</h1>
 <p>Asymmetry is an active coordinate transform that does change the value of the Lagrangian.</p>
 <p><strong>Infinitesimal Transformation</strong></p>
-<p>Let’s change the coordinate <span class="math inline">\(q_i\)</span> by a small amount <span class="math inline">\(f_i(q)\epsilon\)</span>.</p>
+<p>Let us change the coordinate <span class="math inline">\(q_i\)</span> by a small amount <span class="math inline">\(f_i(q)\epsilon\)</span>.</p>
 <p><span class="math display">\[q_i\rightarrow q_i+f_i(q_i)\epsilon\]</span></p>
 <p><span class="math display">\[\delta q_i=f_i(q)\epsilon\]</span></p>
 <p>where <span class="math inline">\(f_i(q)\)</span> means that the small shift of the coordinates may itself depend on the value of the coordinates. <span class="math inline">\(\epsilon\)</span> is an infinitesimal parameter.</p>
@@ -114,11 +112,11 @@
 <ul>
 <li>Translation Invariant and Conservation of Momentum</li>
 </ul>
-<p>e.g. Two particles on a line</p>
+<p><em>e.g.</em> Two particles on a line</p>
 <p>The Lagrangian is invariant under the change (translation).</p>
 <p><span class="math display">\[q_1\rightarrow q_1+\delta\Rightarrow f_1(q)=1\]</span></p>
 <p><span class="math display">\[q_2\rightarrow q_2+\delta\Rightarrow f_2(q)=1\]</span></p>
-<p>Let’s calulate the Noether’s Charge:</p>
+<p>Let us calulate the Noether’s Charge:</p>
 <p><span class="math display">\[Q=\sum_ip_if_i(q)=p_1+p_2\]</span></p>
 <p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}(p_1+p_2)=0\]</span></p>
 <p>Momentum conservation is a result of translation invariance.</p>
@@ -139,7 +137,7 @@
 <li>Time-translation Symmetry and Conservation of Energy (<span class="math inline">\(\frac{\mathrm{d}\mathscr{L}}{\mathrm{d}t}=0\)</span>)</li>
 </ul>
 <p>A system is time-translation invariant if there is no explicit time dependence in its Lagrangian.</p>
-<p>If LAgrangian has explicit time dependence,</p>
+<p>If the Lagrangian has explicit time dependence,</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{\mathrm{d}\mathscr{L}}{\mathrm{d}t}&amp;=\sum_i(\frac{\partial\mathscr{L}}{\partial q_i}\dot q_i+\frac{\partial\mathscr{L}}{\partial\dot q_i}\ddot q_i)+\frac{\partial\mathscr{L}}{\partial t}\\
@@ -176,12 +174,12 @@ H&amp;=p_i\dot q_i-\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
 <p>Since <span class="math display">\[\frac{\partial U}{\partial\mathbf{x}_1}=-\frac{\partial U}{\mathbf{x}_2}\quad\text{(Newton&#39;s Thrid Law)}\]</span></p>
 <p>Then <span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}(\mathbf{p_1}+\mathbf{p_2})=0\]</span></p>
 <p><span class="math inline">\(\Rightarrow\)</span> conservation of momentum</p>
-<p>CM frame</p>
+<p>In center of mass frame:</p>
 <p><span class="math display">\[\mathbf{X}=\frac{m_1\mathbf{x_1}+m_2\mathbf{x_2}}{M}\]</span></p>
 <p>where <span class="math inline">\(M=m_1+m_2\)</span>.</p>
 <p><span class="math display">\[\mathbf{x}=\mathbf{x_1}-\mathbf{x_2}\]</span></p>
 <p><span class="math display">\[\mathscr{L}(\textbf{x}_1,\textbf{x}_2,\dot{\mathbf{x}}_1,\dot{\mathbf{x}}_2)\rightarrow \mathscr{L}(\dot{\mathbf{X}},\mathbf{x},\dot{\mathbf{x}})\]</span></p>
-<p><span class="math display">\[M\mathbf{X}=m_1\mathbf{x}_1+m_2(\mathbf{x}_2-\mathbf{x})=M\mathbf{x}_1-m_2\mathbf{x}\]</span></p>
+<p><span class="math display">\[M\mathbf{X}=m_1\mathbf{x}_1+m_2(\mathbf{x}_1-\mathbf{x})=M\mathbf{x}_1-m_2\mathbf{x}\]</span></p>
 <p><span class="math display">\[\Rightarrow\mathbf{x}_1=\mathbf{X}+\frac{m_2}{M}\mathbf{x}\]</span></p>
 <p><span class="math display">\[\Rightarrow\dot{\mathbf{x}}_1=\dot{\mathbf{X}}+\frac{m_2}{M}\dot{\mathbf{x}}\]</span></p>
 <p><span class="math display">\[M\mathbf{X}=m_1(\mathbf{x}+\mathbf{x}_2)+m_2\mathbf{x}_2=M\mathbf{x}_2+m_1\mathbf{x}\]</span></p>
@@ -190,7 +188,7 @@ H&amp;=p_i\dot q_i-\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
 <p><span class="math display">\[\mathscr{L}=\frac{1}{2}m_1(\dot{\mathbf{X}}-\frac{m_2}{M}\dot{\mathbf{x}})^2
 +\frac{1}{2}m_2(\dot{\mathbf{X}}+\frac{m_2}{M}\dot{\mathbf{x}})^2-U(\mathbf{x})
 =\frac{1}{2}M\dot{\mathbf{X}}^2+\frac{1}{2}m\dot{\mathbf{x}}^2-U(\mathbf{x})\]</span></p>
-<p>where <span class="math inline">\(m=\frac{m_1m_2}{M}\)</span></p>
+<p>where <span class="math inline">\(m=\frac{m_1m_2}{M}\)</span>.</p>
 <p>The equations of motion</p>
 <p><span class="math display">\[\frac{\mathbf{d}}{\mathbf{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\mathbf{X}}}
 =\frac{\partial\mathscr{L}}{\partial\mathbf{X}}
@@ -200,7 +198,7 @@ H&amp;=p_i\dot q_i-\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
 =\frac{\partial\mathscr{L}}{\partial\mathbf{x}}
 \Rightarrow\frac{\mathbf{d}}{\mathbf{d}t}m\dot{\mathbf{x}}=-\frac{\partial U}{\partial\mathbf{x}}\]</span></p>
 <p>Then <span class="math display">\[\mathscr{L}=\frac{1}{2}m\dot{\textbf{x}}^2-U(\mathbf{x})\]</span></p>
-<p>Polar coordintes</p>
+<p>Rewrite the above equation in polar coordintes：</p>
 <p>Suppose <span class="math inline">\(\mathscr{L}=\frac{1}{2}m\dot{\mathrm{r}}^2-U(\mathrm{r})\)</span></p>
 <p>where</p>
 <p><span class="math display">\[\textbf{r}=x\hat{x}+y\hat{y}=r\hat{r}\]</span></p>
@@ -211,13 +209,15 @@ H&amp;=p_i\dot q_i-\frac{1}{2}m{\dot q_i}^2+V(q_i)\\
 <p><span class="math display">\[\mathscr{L}=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)-U(r)\]</span></p>
 <p>The equations of motion</p>
 <p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{r}}=\frac{\partial\mathscr{L}}{\partial r}\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}m\dot{r}=mr\dot{\theta}^2-\frac{\partial U}{\partial r}\]</span></p>
-<p>Forces in the radial direction.</p>
+<p>which is the forces in the radial direction.</p>
 <p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial\mathscr{L}}{\partial\dot{\theta}}=\frac{\partial\mathscr{L}}{\partial\theta}\Rightarrow \frac{\mathrm{d}}{\mathrm{d}t}mr^2\dot{\theta}=0\]</span></p>
-<p>Forces in the <span class="math inline">\(\theta\)</span> direction.</p>
+<p>which is the forces in the <span class="math inline">\(\theta\)</span> direction.</p>
 <p>def <span class="math display">\[L=mr^2\dot{\theta}\]</span></p>
 <p>Since <span class="math inline">\(\frac{\partial\mathscr{L}}{\partial\theta}=0\)</span>, so the system is rotation invariant <span class="math inline">\(\Rightarrow\)</span> conservation of angular momentum</p>
 <p><span class="math display">\[m\ddot{r}=mr\dot{\theta}-\frac{\partial U}{\partial r}=mr(\frac{L}{mr^2})^2-\frac{\partial U}{\partial r}=\frac{L^2}{mr^3}-\frac{\partial U}{\partial r}\]</span></p>
 <p><span class="math display">\[H=\sum_ip_i\dot{q}_i-\mathscr{L}=m\dot{r}^2+mr^2\dot{\theta}^2-\frac{1}{2}m\dot{r}^2-\frac{1}{2}mr^2\dot{\theta}^2+U(r)=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+U(r)\]</span></p>
+<p><strong>References</strong></p>
+<p>Leonard Susskind and George Hrabovsky. <em>The theoretical minimum: what you need to know to start doing physics</em>. Basic Books, 2014.</p>
 </div>
 
     </div>

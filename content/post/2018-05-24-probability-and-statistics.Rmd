@@ -642,3 +642,7 @@ $$
 $$
 
 Which is the log of $e^{t^2/2}$, the MGF of $N(0,1)$.
+
+**References**
+
+http://www.mxawng.com/stuff/notes/stat110.pdf

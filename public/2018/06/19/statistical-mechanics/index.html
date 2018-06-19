@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.41" />
+
+
+<title>Statistical Mechanics - A Hugo website</title>
+<meta property="og:title" content="Statistical Mechanics - A Hugo website">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/%3cnil%3e"
+         width=""
+         height=""
+         alt="">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">5 min read</span>
+    
+
+    <h1 class="article-title">Statistical Mechanics</h1>
+
+    
+    <span class="article-date">2018/06/19</span>
+    
+
+    <div class="article-content">
+      <div id="fundemental-concepts" class="section level1">
+<h1>Fundemental Concepts</h1>
+<ul>
+<li><p>phase space <span class="math inline">\(\Gamma=\prod_{i=1}^{N}\{\vec{p}_i,\vec{q}_i\}\)</span></p></li>
+<li><p>microstate of the system <span class="math inline">\(\mu(t)=\{\vec{p}_i,\vec{q}_i\}\)</span></p></li>
+</ul>
+<p>The microstate of a given system, at any time <span class="math inline">\(t\)</span>, is defined by specifying the instantanous positions and momenta of all the particles constituting the system. Thus the microstate corresponds to a point <span class="math inline">\(\mu(t)\)</span> in the 6N dimensional phase space <span class="math inline">\(\Gamma\)</span>.</p>
+<p>For a possible microstate <span class="math inline">\(i\)</span> of the system</p>
+<p><span class="math inline">\(P(i)\geqslant 0\)</span></p>
+<p><span class="math inline">\(\sum_i=1\)</span></p>
+<p><span class="math inline">\(P(i)=\frac{\mathfrak{N}(i)}{\mathfrak{N}}\)</span> as <span class="math inline">\(\mathfrak{N}\rightarrow\infty\)</span></p>
+<p><span class="math inline">\(\langle F\rangle=\sum_iP_iF_i\)</span></p>
+<p>Define density function <span class="math inline">\(\rho(\vec{p}_i, \vec{q}_i, t)\)</span> in phase space:</p>
+<p><span class="math display">\[\int\rho(\vec{p}_i, \vec{q}_i, t)\mathrm{d}\Gamma=1\]</span> where <span class="math inline">\(\mathrm{d}\Gamma=\sum_i^{N}\mathrm{d}^3\vec{p}_i\mathrm{d}^3\vec{q}_i\)</span>.</p>
+<p>Define ensemble average</p>
+<p><span class="math display">\[\langle F\rangle=\int\mathrm{d}\Gamma\rho(\vec{p}_i, \vec{q}_i, t)F\]</span> The number of microstates, or multiplicity of microstate</p>
+<p><span class="math display">\[\Omega=\frac{\Gamma}{\mathrm{d}\Gamma}\]</span></p>
+<p>where <span class="math inline">\(\Gamma\)</span> is the volume of phase space accessible to the system. <span class="math inline">\(\mathrm{d}\Gamma\)</span> is the phase space elementary cell, which is set to <span class="math inline">\(h^{3N}\)</span> (for <span class="math inline">\(N\)</span>-particle system) according to quantum mechanics. The lower bound to the volume of the elementary cell is directly connected to the uncertainty principle.</p>
+</div>
+<div id="liouvilles-theorem" class="section level1">
+<h1>Liouville’s Theorem</h1>
+<p>The desity of particles in phase spece is a constant.</p>
+<p><span class="math display">\[\frac{\mathrm{d}\rho}{\mathrm{d}t}=0\]</span> The bunch of particles spread out in coordinates space but the coordinate is highly correlated with the momentum so the density in phase space can remain constant.</p>
+<p>Proof of Liouville’s Theorem</p>
+<p>The equation of continuity</p>
+<p><span class="math display">\[\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\vec{v})=0\]</span> where <span class="math inline">\(\rho\vec{v}\)</span> is the flux (<span class="math inline">\(\vec{j}\)</span>).</p>
+<p><span class="math display">\[\frac{\partial\rho}{\partial t}+
+\sum_i[\frac{\partial(\rho\dot{q}_i)}{\partial q_i}+
+\frac{\partial(\rho\dot{p}_i)}{\partial p_i}]=0\]</span></p>
+<p><span class="math display">\[\Rightarrow\frac{\partial\rho}{\partial t}+\rho\sum_i[\frac{\partial\dot{q}_i}{\partial q_i}+
+\frac{\partial\dot{p}_i}{\partial p_i}]+\sum_i(\frac{\partial\rho}{\partial q_i}\dot{q}_i+
+\frac{\partial\rho}{\partial p_i}\dot{p}_i)=0\]</span></p>
+<p><span class="math display">\[\Rightarrow\frac{\partial\rho}{\partial t}+\rho\nabla\cdot\vec{v}+\{\rho, H\}=0\]</span> Since <span class="math inline">\(\nabla\cdot\vec{v}=0\)</span>, then</p>
+<p><span class="math display">\[\frac{\partial\rho}{\partial t}+\{\rho,H\}=0\]</span> <span class="math display">\[\Rightarrow\frac{\mathrm{d}\rho}{\mathrm{d}t}=0\]</span></p>
+</div>
+<div id="postulates" class="section level1">
+<h1>Postulates</h1>
+<ol style="list-style-type: decimal">
+<li>ensemble average = long time average</li>
+</ol>
+<p>In thermal equailibrium, time average of all microscopic quantities are independent of time.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Boltzmann’s assumption of equal a priori equilibrium probabilities:</li>
+</ol>
+<p>In a state of thermal equailibrium, all the accessible microstates of the isolate system are equally probable.</p>
+<div id="microcanoncal-ensemble-n-v-e" class="section level3">
+<h3>Microcanoncal ensemble (<span class="math inline">\(N\)</span>, <span class="math inline">\(V\)</span>, <span class="math inline">\(E\)</span>)</h3>
+<p><span class="math display">\[
+P(\mu)=\frac{1}{\Omega(N,V,E)}
+\begin{cases} 
+      1 &amp; for\space H(\mu)=E \\
+      0 &amp; otherwise
+\end{cases}
+\]</span> where <span class="math inline">\(H(p_i,q_i)\)</span> is the Hamiltonian of the system. <span class="math inline">\(\Omega\)</span> is the number of all possible microstates.</p>
+<p><span class="math display">\[\rho=\rho(H)=\delta(H(p_i,q_i)-E)\]</span></p>
+<p>where <span class="math inline">\(H(p_i,q_i)=E\)</span>. The phase trajectory must lie on a surface of constant energy (ergodic surface).</p>
+<p>Let us divide an isolated system (<span class="math inline">\(N_t\)</span>, <span class="math inline">\(V_t\)</span>, <span class="math inline">\(E_t\)</span>, <span class="math inline">\(\Omega_t\)</span>) into two subsystem A (<span class="math inline">\(N\)</span>, <span class="math inline">\(V\)</span>, <span class="math inline">\(E\)</span>, <span class="math inline">\(\Omega\)</span>) and B (<span class="math inline">\(N&#39;\)</span>, <span class="math inline">\(V&#39;\)</span>, <span class="math inline">\(E&#39;\)</span>, <span class="math inline">\(\Omega&#39;\)</span>).</p>
+<p>The prob. that A has energy <span class="math inline">\(E\)</span> is</p>
+<p><span class="math display">\[P(E)=\frac{\Omega(E)\Omega&#39;(E&#39;)}{\Omega_t(E_t)}\]</span> where <span class="math inline">\(\Omega_t(E_t)=\int\mathrm{d}E\Omega(E)\Omega&#39;(E_t-E)\)</span>.</p>
+<p>The number of microstates of a free particle with energy <span class="math inline">\(\leqslant\epsilon\)</span></p>
+<p><span class="math display">\[\Sigma(\epsilon)=\int_V\mathrm{d}^3q\int_{|p|\leqslant\sqrt{2m\epsilon}}\mathrm{d}^3p=\frac{V}{h^3}4\pi\int_0^{\sqrt{2m\epsilon}}p^2\mathrm{d}p=\frac{V}{h^3}\frac{4\pi}{3}(2m\epsilon)^{3/2}\]</span></p>
+<p>The number of microstates with energy in (<span class="math inline">\(\epsilon\)</span>, <span class="math inline">\(\epsilon+\mathrm{d}\epsilon\)</span>)</p>
+<p><span class="math display">\[w(\epsilon)\backsim\epsilon^{1/2}\mathrm{d}\epsilon=\rho(\epsilon)\mathrm{d}\epsilon\]</span> where <span class="math inline">\(\rho(\epsilon)\)</span> is the density of states.</p>
+<p>For a system of <span class="math inline">\(N\)</span> particles</p>
+<p><span class="math display">\[\Omega(E)\backsim E^{\alpha N}\]</span></p>
+<p>At equailibrium,</p>
+<p><span class="math display">\[\frac{\partial P(E)}{\partial E}=0\]</span></p>
+<p><span class="math display">\[\Rightarrow\frac{\partial \ln P(E)}{\partial E}=0\]</span></p>
+<p><span class="math display">\[\Rightarrow\frac{\partial \ln\Omega(E)}{\partial E}+\frac{\partial \ln\Omega&#39;(E_t-E)}{\partial E}=0\]</span></p>
+<p><span class="math display">\[\Rightarrow\frac{\partial \ln\Omega(E)}{\partial E}=\frac{\partial \ln\Omega&#39;(E&#39;)}{\partial E&#39;}\]</span></p>
+<p>def <span class="math inline">\(\beta(E)=\frac{\partial\ln\Omega(E)}{\partial E}\)</span></p>
+<p>In equailibrium, <span class="math inline">\(T_A=T_B\)</span></p>
+<p><span class="math inline">\(\beta(E)\)</span> must be a function of <span class="math inline">\(\frac{1}{k_BT}\)</span>, where <span class="math inline">\(k_B\)</span> is just a conver factor which conver unit of temperature to unit of energy.</p>
+<p>According to Thermodynanics Relation</p>
+<p><span class="math display">\[\mathrm{d}E=-P\mathrm{d}V+T\mathrm{d}S+\mu\mathrm{d}N\]</span></p>
+<p><span class="math display">\[\Rightarrow(\frac{\partial E}{\partial S})_{V,N}=T\]</span></p>
+<p><span class="math display">\[\Rightarrow(\frac{\partial S}{\partial E})_{V,N}=\frac{1}
+{T}\]</span></p>
+<p>def <span class="math inline">\(S(N,V,E)=k_B\ln\Omega(N,V,E)=k_B\ln\frac{1}{P_i}=-k_B\ln P_i=-k_B\sum_iP_i\ln P_i\)</span></p>
+</div>
+<div id="canonical-ensemble-n-v-t" class="section level3">
+<h3>Canonical ensemble (N, V, T)</h3>
+<p>Suppose there are <span class="math inline">\(\mathfrak{N}\)</span> copies of a subsystem A (<span class="math inline">\(N\)</span>, <span class="math inline">\(V\)</span>, <span class="math inline">\(E_i(N,V,T)\)</span>) consitituting a total system (<span class="math inline">\(\mathfrak{N}N\)</span>, <span class="math inline">\(\mathfrak{N}V\)</span>, <span class="math inline">\(E_t\)</span>, <span class="math inline">\(\Omega_t\)</span>).</p>
+<p>The prob. that A has the energy <span class="math inline">\(E_i\)</span> is</p>
+<p><span class="math display">\[P(E_i)=\frac{\Omega&#39;(E&#39;)}{\Omega_t(E_t)}\]</span> where <span class="math inline">\(E&#39;=E_t-E_i\)</span>, and <span class="math inline">\(E_i\lll E_t\)</span>.</p>
+<p><span class="math display">\[\ln P(E_i)=\ln\Omega&#39;(E_t-E_i)-\ln\Omega_t(E_t)=\ln\Omega&#39;(E_t)-E_i\frac{\partial\ln\Omega&#39;(E&#39;)}{\partial E&#39;}\bigg\rvert_{E&#39;=E_t}-\ln\Omega_t(E_t)\]</span> <span class="math inline">\(\Rightarrow\)</span> Boltzmann’s distribution</p>
+<p><span class="math display">\[P(E_i)=(const.)e^{-\beta E_i}\]</span></p>
+<p>where <span class="math inline">\(\beta\equiv\frac{\partial\ln\Omega&#39;}{\partial E&#39;}\)</span>.</p>
+<p><span class="math display">\[P(E_i)=\frac{e^{-\beta E_i}}{\sum_ie^{-\beta E_i}}=\frac{e^{-\beta E_i}}{Z}\]</span></p>
+<p>where the canonical partition function</p>
+<p><span class="math display">\[Z=\sum_{state\space i}e^{-\beta E_i}=\sum_{level\space j}g_ie^{-\beta E_j}=\int_o^{\infty}e^{-\beta E}\rho(E)\mathrm{d}E\approx e^{-\beta\langle E\rangle}\Omega(\langle E\rangle)\]</span></p>
+<p>where <span class="math inline">\(g_i\)</span> is the degeneracy of level <span class="math inline">\(E_j\)</span>, <span class="math inline">\(\rho(E)\)</span> is the density of states.</p>
+<p><span class="math display">\[\ln Z=-\beta\langle E\rangle+\ln\Omega\]</span> <span class="math display">\[\Rightarrow-k_BT\ln Z=\langle E\rangle-k_BT\ln\Omega\]</span></p>
+<p>Boltzmann’s formula <span class="math display">\[S=k_B\ln\Omega\]</span></p>
+<p>def <span class="math inline">\(F=E-TS=-k_BT\ln Z\)</span></p>
+<p>where <span class="math inline">\(F\)</span> is Helmholtz free energy.</p>
+<p><span class="math display">\[\ln P_i=-\ln Z-\beta E_i\]</span> <span class="math display">\[\Rightarrow E_i=-\frac{\ln Z+\ln P_i}{\beta}\]</span> <span class="math display">\[\langle E\rangle=\sum_iP_iE_i=-\frac{\sum_iP_i\ln Z+\sum_iP_i\ln P_i}{\beta}=-k_BT\ln Z+k_BT\sum_iP_i\ln P_i=E-TS+k_BTP_i\ln P_i\]</span></p>
+<p><span class="math display">\[\Rightarrow S=-k_B\sum_iP_i\ln P_i\]</span></p>
+<p><span class="math display">\[\langle E\rangle=\sum_iP_iE_i=\frac{\sum_iE_ie^{-\beta E_i}}{\sum_ie^{-\beta E_i}}=-\frac{1}
+{Z}\frac{\partial Z}{\partial\beta}=-\frac{\ln Z}{\partial\beta}\]</span></p>
+<p><span class="math display">\[\langle E^2\rangle=\sum_iP_iE_i^2=\frac{\sum_iE_i^2e^{-\beta E_i}}{\sum_ie^{-\beta E_i}}=\frac{1}{Z}\frac{\partial^2Z}{\partial\beta^2}\]</span></p>
+<p><span class="math display">\[Var(E)=\langle(E-\langle E\rangle)^2\rangle=\langle E^2\rangle-\langle E\rangle^2=\frac{\partial^2}{\partial\beta^2}\ln Z=-\frac{\partial}{\partial\beta}\langle E\rangle=-\frac{\partial\langle E\rangle}{\partial T}\frac{\partial T}{\partial\beta}=\frac{\partial\langle E\rangle}{\partial T}k_BT^2=C_Vk_BT^2&gt;0\]</span></p>
+<p>Another way of deriving Boltzmann’s distribution and canonical partition function</p>
+<p><span class="math display">\[\sum_in_i=\mathfrak{N}\]</span></p>
+<p><span class="math display">\[\sum_in_iE_i=E_t\]</span></p>
+<p>where <span class="math inline">\(n_i\)</span> is the number of systems found in state <span class="math inline">\(E_i\)</span>.</p>
+<p><span class="math display">\[\Omega_t(n)=\frac{\mathfrak{N}!}{\prod_in_i!}\]</span></p>
+<p><span class="math display">\[\Rightarrow\ln\Omega_t(n)=\mathfrak{N}\ln\mathfrak{N}-\sum_in_i\ln n_i\]</span></p>
+<p>where <span class="math inline">\(n\)</span> represents the entire set <span class="math inline">\(\{n_1,n_2,\cdots\}\)</span> and is called a “distribution”.</p>
+<p><span class="math display">\[P(E_i)=P_i=\frac{\sum_n\Omega_t(t)n_i(n)}{\mathfrak{N}\sum_n\Omega_t{(n)}}\approx \frac{\Omega_t^*(n^*)n_i^*}{\mathfrak{N}\Omega_t^*(n^*)}=\frac{n_j^*}{\mathfrak{N}}\]</span></p>
+<p>where <span class="math inline">\(n_i^*\)</span> is the value of <span class="math inline">\(n_i\)</span> in the most probable distribution <span class="math inline">\(n^*\)</span>.</p>
+<p>Find the distribution <span class="math inline">\(n^*\)</span> which gives the largest <span class="math inline">\(\Omega_t\)</span> (Method of Lagrange multipliters)</p>
+<p><span class="math display">\[\frac{\partial}{\partial n_i}[\ln\Omega_t(n)-\alpha\sum_in_i-\beta E_i]=0\]</span></p>
+<p><span class="math display">\[\Rightarrow\ln\mathfrak{N}+1-\ln n_i-1-\alpha-\beta E_i=0\]</span></p>
+<p><span class="math display">\[\Rightarrow P_i=\frac{n_i}{\mathfrak{N}}=e^{-\alpha}e^{-\beta E_i}\]</span></p>
+<p>where <span class="math inline">\(e^{-\alpha}\)</span> is just a normalized constant.</p>
+<p>def <span class="math display">\[Z=e^{-\alpha}=\sum_ie^{-\beta E_i}\]</span></p>
+<p>where <span class="math inline">\(Z\)</span> is the canonical partition function.</p>
+</div>
+<div id="ex.-1-harmonic-oscillators" class="section level3">
+<h3>Ex. 1 Harmonic oscillators</h3>
+<p><span class="math display">\[H(p_i,q_i)=\frac{p_i^2}{2m}+\frac{1}{2}kq_i^2\]</span></p>
+<p>For the single-oscillator partition function,</p>
+<p><span class="math display">\[Z_1(\beta)=\int\int e^{-\beta\frac{p^2}{2m}}e^{-\beta\frac{kq^2}{2}}\mathrm{d}p\mathrm{d}q=\frac{1}{h}\sqrt{\frac{2\pi m}{\beta}}\sqrt{\frac{2\pi}{\beta k}}=\frac{1}{\hbar\omega\beta}=\frac{k_BT}{\hbar\omega}\]</span></p>
+<p>where <span class="math inline">\(\omega=\sqrt{\frac{k}{m}}\)</span>.</p>
+<p><span class="math display">\[\Rightarrow\ln Z_1=-\ln\beta+const.\]</span> <span class="math display">\[\langle E_1\rangle=-\frac{\ln Z_1}{\partial\beta}=\frac{1}{\beta}=k_BT\]</span></p>
+<p>The partition function of the <span class="math inline">\(N\)</span>-oscillators system is</p>
+<p><span class="math display">\[Z_N(\beta)=[Z_1(\beta)]^N=(\frac{1}{\hbar\omega\beta})^N=(\frac{k_BT}{\hbar\omega})^N\]</span></p>
+<p>Assuming that hte oscillators arre distinguishable.</p>
+<p><span class="math display">\[\ln Z_N=-N\ln\beta+const.\]</span></p>
+<p><span class="math display">\[\langle E\rangle=Nk_BT\]</span></p>
+<p>Quantum Harmonic oscillators</p>
+<p>The energy eigenvalues of a 1-D harmonic oscillator are given by</p>
+<p><span class="math display">\[E_n=(n+\frac{1}{2})\hbar\omega\]</span></p>
+<p>The single-oscillator partition function</p>
+<p><span class="math display">\[Z_1(\beta)=\sum_{n=0}^{\infty}e^{-\beta(n+\frac{1}{2})\hbar\omega}=\frac{e^{-\frac{1}{2}\beta\hbar\omega}}{1-e^{-\beta\hbar\omega}}\]</span></p>
+<p><span class="math display">\[\ln Z_1(\beta)=-\frac{1}{2}\beta\hbar\omega-\ln(1-e^{-\beta\hbar\omega})\]</span></p>
+<p><span class="math display">\[\langle E\rangle=-\frac{\partial\ln Z_1}{\partial\beta}=\frac{1}{2}\hbar\omega+\frac{\hbar\omega}{e^{\beta\hbar\omega}-1}\]</span></p>
+<p>At high T, <span class="math inline">\(\beta\ll 1\)</span>, <span class="math inline">\(\beta\hbar\omega\ll 1\)</span>$,</p>
+<p><span class="math display">\[e^{\beta\hbar\omega}=1+\beta\hbar\omega\]</span></p>
+<p><span class="math display">\[E=\frac{\hbar\omega}{2}+k_BT\]</span></p>
+<p>At low T, <span class="math inline">\(\beta\gg 1\)</span>, <span class="math inline">\(\beta\hbar\omega\gg 1\)</span>,</p>
+<p><span class="math display">\[e^{\beta\hbar\omega}-1\approx e^{\beta\hbar\omega}\]</span></p>
+<p><span class="math display">\[E=\frac{\hbar\omega}{2}+\hbar\omega e^{-\beta\hbar\omega}\]</span></p>
+</div>
+<div id="ex.-2-ideal-gas" class="section level3">
+<h3>Ex. 2 Ideal gas</h3>
+<p><span class="math display">\[H=\sum_{i=1}^{N}\frac{\vec{p}_i^2}{2m}\]</span> <span class="math display">\[Z=\int_{\infty}^{\infty}\mathrm{d}^{3N}q\mathrm{d}^{3N}pe^{-\beta\sum_{i=1}^{3N}\frac{P_i^2}{2m}}=\frac{V^N}{h^{3N}N!}(\frac{2\pi m}{\beta})^{3N/2}\]</span> Using Stirling approximation</p>
+<p><span class="math display">\[N!=N^Ne^{-N}\]</span></p>
+<p><span class="math display">\[Z=(\frac{eV}{h^3N})^N(\frac{2\pi m}{\beta})^{3N/2}\]</span></p>
+<p><span class="math display">\[\ln Z=N\ln\frac{eV}{h^3N}+\frac{3}{2}N\ln\frac{2\pi m}{\beta}=-\frac{3}{2}N\ln\beta+const.\]</span></p>
+<p><span class="math display">\[E=-\frac{\partial\ln Z}{\partial\beta}=\frac{3}{2}N\frac{1}{\beta}=\frac{3}{2}k_BT\]</span></p>
+<p>def <span class="math inline">\(\lambda=\frac{h}{\sqrt{2\pi mk_BT}}\)</span></p>
+<p><span class="math display">\[Z=(\frac{eV}{\lambda N})^N\]</span></p>
+<p><span class="math display">\[\ln Z=N\ln V+const.\]</span> <span class="math display">\[F=-k_BT\ln Z\]</span></p>
+<p><span class="math display">\[\mathrm{d}F=-S\mathrm{d}T-P\mathrm{d}V+\mu\mathrm{d}N\]</span></p>
+<p><span class="math display">\[P=-(\frac{\partial F}{\partial V})_{T,V}=\frac{Nk_BT}{V}\]</span></p>
+</div>
+<div id="ex.-3-interacting-particles" class="section level3">
+<h3>Ex. 3 Interacting particles</h3>
+<p><span class="math display">\[H=\sum_{i=1}^{N}\frac{\vec{p}_i}{2m}+u(\vec{q}_1,\cdots,\vec{q}_N)\approx\sum_{i=1}^{N}\frac{\vec{p}_i}{2m}+\sum_{i&gt;j}u(|\vec{q}_i-\vec{q}_j|)\]</span> <span class="math display">\[\int\mathrm{d}^3qu(|q|)=u_0\]</span></p>
+<p><span class="math display">\[\int\mathrm{d}^3q_i\mathrm{d}^3q_ju(|q_i-q_j|)=Vu_0\]</span></p>
+<p><span class="math display">\[\begin{aligned}
+Z&amp;=\int\frac{\mathrm{d}^3p\mathrm{d}^3q}{h^{3N}N!}e^{-\beta\sum_{i=1}^{3N}\frac{P_i^2}{2m}}e^{-\beta\sum_{i&gt;j}u(|q_i-q_j|)}\\
+&amp;=\frac{V^N}{h^{3N}N!}\int\mathrm{d}^{3N}pe^{-\beta\sum_{i=1}^{3N}\frac{P_i^2}{2m}}\frac{1}{V^N}\int\mathrm{d}^{3N}qe^{-\beta\sum_{i&gt;j}u(|q_i-q_j|)}\\
+&amp;=Z_0\int\frac{\mathrm{d}^{3N}q}{V^N}[1-\sum_{i&gt;j}u(|q_i-q_j|)]\\
+&amp;=Z_0[1-\frac{N(N-1)\beta}{2}\frac{\int\mathrm{d}^{3N}qu(|q_i-q_j|)}{V^N}]\\
+&amp;=Z_0[1-\frac{N(N-1)\beta}{2}\frac{\int\mathrm{d}^3q_1\mathrm{d}^3q_2u(|q_i-q_j|)}{V^2}]\\
+&amp;=Z_0[1-\frac{\beta N^2u_0}{2V}]
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[\ln Z=\ln Z_0+\ln(1-\frac{\beta N^2u_0}{2V})=\ln Z_0-\frac{\beta N^2u_0}{2V}\]</span> <span class="math display">\[E=-\frac{\partial\ln Z}{\beta}=\frac{3}{2}Nk_BT+\frac{N^2u_0}{2V}\]</span></p>
+<p><span class="math display">\[P=\frac{Nk_BT}{V}-\frac{N^2u_0}{2V}\]</span></p>
+<p><strong>References</strong></p>
+<p>Terrell L. Hill. <em>An introduction to statistical thermodynamics</em>. Dover Publications, 1986.</p>
+<p>R. K. Pathria and Paul D. Beale. <em>Statistical Mechanics</em> (Third Edition). 2011.</p>
+</div>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,324 @@
+---
+title: Statistical Mechanics
+author: Canyong Guo
+date: '2018-06-19'
+slug: statistical-mechanics
+categories:
+  - Physics
+tags: []
+---
+
+# Fundemental Concepts
+
+- phase space $\Gamma=\prod_{i=1}^{N}\{\vec{p}_i,\vec{q}_i\}$
+
+- microstate of the system $\mu(t)=\{\vec{p}_i,\vec{q}_i\}$
+
+The microstate of a given system, at any time $t$, is defined by specifying the instantanous positions and momenta of all the particles constituting the system. Thus the microstate corresponds to a point $\mu(t)$ in the 6N dimensional phase space $\Gamma$.
+
+For a possible microstate $i$ of the system
+
+$P(i)\geqslant 0$
+
+$\sum_i=1$
+
+$P(i)=\frac{\mathfrak{N}(i)}{\mathfrak{N}}$ as $\mathfrak{N}\rightarrow\infty$
+
+$\langle F\rangle=\sum_iP_iF_i$
+
+Define density function $\rho(\vec{p}_i, \vec{q}_i, t)$ in phase space:
+
+$$\int\rho(\vec{p}_i, \vec{q}_i, t)\mathrm{d}\Gamma=1$$
+where $\mathrm{d}\Gamma=\sum_i^{N}\mathrm{d}^3\vec{p}_i\mathrm{d}^3\vec{q}_i$.
+
+Define ensemble average
+
+$$\langle F\rangle=\int\mathrm{d}\Gamma\rho(\vec{p}_i, \vec{q}_i, t)F$$
+The number of microstates, or multiplicity of microstate 
+
+$$\Omega=\frac{\Gamma}{\mathrm{d}\Gamma}$$
+
+where $\Gamma$ is the volume of phase space accessible to the system. $\mathrm{d}\Gamma$ is the phase space elementary cell, which is set to $h^{3N}$ (for $N$-particle system) according to quantum mechanics. The lower bound to the volume of the elementary cell is directly connected to the uncertainty principle.
+
+# Liouville's Theorem
+
+The desity of particles in phase spece is a constant.
+
+$$\frac{\mathrm{d}\rho}{\mathrm{d}t}=0$$
+The bunch of particles spread out in coordinates space but the coordinate is highly correlated with the momentum so the density in phase space can remain constant.
+
+Proof of Liouville's Theorem
+
+The equation of continuity
+
+$$\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\vec{v})=0$$
+where $\rho\vec{v}$ is the flux ($\vec{j}$).
+
+$$\frac{\partial\rho}{\partial t}+
+\sum_i[\frac{\partial(\rho\dot{q}_i)}{\partial q_i}+
+\frac{\partial(\rho\dot{p}_i)}{\partial p_i}]=0$$
+
+$$\Rightarrow\frac{\partial\rho}{\partial t}+\rho\sum_i[\frac{\partial\dot{q}_i}{\partial q_i}+
+\frac{\partial\dot{p}_i}{\partial p_i}]+\sum_i(\frac{\partial\rho}{\partial q_i}\dot{q}_i+
+\frac{\partial\rho}{\partial p_i}\dot{p}_i)=0$$
+
+$$\Rightarrow\frac{\partial\rho}{\partial t}+\rho\nabla\cdot\vec{v}+\{\rho, H\}=0$$
+Since $\nabla\cdot\vec{v}=0$, then
+
+$$\frac{\partial\rho}{\partial t}+\{\rho,H\}=0$$
+$$\Rightarrow\frac{\mathrm{d}\rho}{\mathrm{d}t}=0$$
+
+# Postulates
+
+1) ensemble average = long time average
+
+In thermal equailibrium, time average of all microscopic quantities are independent of time.
+
+2) Boltzmann's assumption of equal a priori equilibrium probabilities:
+
+In a state of thermal equailibrium, all the accessible microstates of the isolate system are equally probable.
+
+### Microcanoncal ensemble ($N$, $V$, $E$)
+
+$$
+P(\mu)=\frac{1}{\Omega(N,V,E)}
+\begin{cases} 
+      1 & for\space H(\mu)=E \\
+      0 & otherwise
+\end{cases}
+$$
+where $H(p_i,q_i)$ is the Hamiltonian of the system. $\Omega$ is the number of all possible microstates. 
+
+$$\rho=\rho(H)=\delta(H(p_i,q_i)-E)$$
+
+where $H(p_i,q_i)=E$. The phase trajectory must lie on a surface of constant energy (ergodic surface).
+
+Let us divide an isolated system ($N_t$, $V_t$, $E_t$, $\Omega_t$) into two subsystem A ($N$, $V$, $E$, $\Omega$) and B ($N'$, $V'$, $E'$, $\Omega'$).
+
+The prob. that A has energy $E$ is 
+
+$$P(E)=\frac{\Omega(E)\Omega'(E')}{\Omega_t(E_t)}$$
+where $\Omega_t(E_t)=\int\mathrm{d}E\Omega(E)\Omega'(E_t-E)$.
+
+The number of microstates of a free particle with energy $\leqslant\epsilon$
+
+$$\Sigma(\epsilon)=\int_V\mathrm{d}^3q\int_{|p|\leqslant\sqrt{2m\epsilon}}\mathrm{d}^3p=\frac{V}{h^3}4\pi\int_0^{\sqrt{2m\epsilon}}p^2\mathrm{d}p=\frac{V}{h^3}\frac{4\pi}{3}(2m\epsilon)^{3/2}$$
+
+The number of microstates with energy in ($\epsilon$, $\epsilon+\mathrm{d}\epsilon$)
+
+$$w(\epsilon)\backsim\epsilon^{1/2}\mathrm{d}\epsilon=\rho(\epsilon)\mathrm{d}\epsilon$$
+where $\rho(\epsilon)$ is the density of states.
+
+For a system of $N$ particles
+
+$$\Omega(E)\backsim E^{\alpha N}$$
+
+At equailibrium,
+
+$$\frac{\partial P(E)}{\partial E}=0$$
+
+$$\Rightarrow\frac{\partial \ln P(E)}{\partial E}=0$$
+
+$$\Rightarrow\frac{\partial \ln\Omega(E)}{\partial E}+\frac{\partial \ln\Omega'(E_t-E)}{\partial E}=0$$
+
+$$\Rightarrow\frac{\partial \ln\Omega(E)}{\partial E}=\frac{\partial \ln\Omega'(E')}{\partial E'}$$
+
+def $\beta(E)=\frac{\partial\ln\Omega(E)}{\partial E}$
+
+In equailibrium, $T_A=T_B$
+
+$\beta(E)$ must be a function of $\frac{1}{k_BT}$, where $k_B$ is just a conver factor which conver unit of temperature to unit of energy.
+
+According to Thermodynanics Relation
+
+$$\mathrm{d}E=-P\mathrm{d}V+T\mathrm{d}S+\mu\mathrm{d}N$$
+
+$$\Rightarrow(\frac{\partial E}{\partial S})_{V,N}=T$$
+
+$$\Rightarrow(\frac{\partial S}{\partial E})_{V,N}=\frac{1}
+{T}$$
+
+def $S(N,V,E)=k_B\ln\Omega(N,V,E)=k_B\ln\frac{1}{P_i}=-k_B\ln P_i=-k_B\sum_iP_i\ln P_i$
+
+### Canonical ensemble (N, V, T)
+
+Suppose there are $\mathfrak{N}$ copies of a subsystem A ($N$, $V$, $E_i(N,V,T)$) consitituting a total system ($\mathfrak{N}N$, $\mathfrak{N}V$, $E_t$, $\Omega_t$).
+
+The prob. that A has the energy $E_i$ is 
+
+$$P(E_i)=\frac{\Omega'(E')}{\Omega_t(E_t)}$$
+where $E'=E_t-E_i$, and $E_i\lll E_t$.
+
+$$\ln P(E_i)=\ln\Omega'(E_t-E_i)-\ln\Omega_t(E_t)=\ln\Omega'(E_t)-E_i\frac{\partial\ln\Omega'(E')}{\partial E'}\bigg\rvert_{E'=E_t}-\ln\Omega_t(E_t)$$
+$\Rightarrow$ Boltzmann's distribution
+
+$$P(E_i)=(const.)e^{-\beta E_i}$$
+
+where $\beta\equiv\frac{\partial\ln\Omega'}{\partial E'}$.
+
+$$P(E_i)=\frac{e^{-\beta E_i}}{\sum_ie^{-\beta E_i}}=\frac{e^{-\beta E_i}}{Z}$$
+
+where the canonical partition function 
+
+$$Z=\sum_{state\space i}e^{-\beta E_i}=\sum_{level\space j}g_ie^{-\beta E_j}=\int_o^{\infty}e^{-\beta E}\rho(E)\mathrm{d}E\approx e^{-\beta\langle E\rangle}\Omega(\langle E\rangle)$$
+
+where $g_i$ is the degeneracy of level $E_j$, $\rho(E)$ is the density of states.
+
+$$\ln Z=-\beta\langle E\rangle+\ln\Omega$$
+$$\Rightarrow-k_BT\ln Z=\langle E\rangle-k_BT\ln\Omega$$
+
+Boltzmann's formula
+$$S=k_B\ln\Omega$$
+
+def $F=E-TS=-k_BT\ln Z$
+
+where $F$ is Helmholtz free energy.
+
+$$\ln P_i=-\ln Z-\beta E_i$$
+$$\Rightarrow E_i=-\frac{\ln Z+\ln P_i}{\beta}$$
+$$\langle E\rangle=\sum_iP_iE_i=-\frac{\sum_iP_i\ln Z+\sum_iP_i\ln P_i}{\beta}=-k_BT\ln Z+k_BT\sum_iP_i\ln P_i=E-TS+k_BTP_i\ln P_i$$
+
+$$\Rightarrow S=-k_B\sum_iP_i\ln P_i$$
+
+$$\langle E\rangle=\sum_iP_iE_i=\frac{\sum_iE_ie^{-\beta E_i}}{\sum_ie^{-\beta E_i}}=-\frac{1}
+{Z}\frac{\partial Z}{\partial\beta}=-\frac{\ln Z}{\partial\beta}$$
+
+$$\langle E^2\rangle=\sum_iP_iE_i^2=\frac{\sum_iE_i^2e^{-\beta E_i}}{\sum_ie^{-\beta E_i}}=\frac{1}{Z}\frac{\partial^2Z}{\partial\beta^2}$$
+
+$$Var(E)=\langle(E-\langle E\rangle)^2\rangle=\langle E^2\rangle-\langle E\rangle^2=\frac{\partial^2}{\partial\beta^2}\ln Z=-\frac{\partial}{\partial\beta}\langle E\rangle=-\frac{\partial\langle E\rangle}{\partial T}\frac{\partial T}{\partial\beta}=\frac{\partial\langle E\rangle}{\partial T}k_BT^2=C_Vk_BT^2>0$$
+
+Another way of deriving Boltzmann's distribution and canonical partition function
+
+$$\sum_in_i=\mathfrak{N}$$
+
+$$\sum_in_iE_i=E_t$$
+
+where $n_i$ is the number of systems found in state $E_i$.
+
+$$\Omega_t(n)=\frac{\mathfrak{N}!}{\prod_in_i!}$$
+
+$$\Rightarrow\ln\Omega_t(n)=\mathfrak{N}\ln\mathfrak{N}-\sum_in_i\ln n_i$$
+
+where $n$ represents the entire set $\{n_1,n_2,\cdots\}$ and is called a "distribution".
+
+$$P(E_i)=P_i=\frac{\sum_n\Omega_t(t)n_i(n)}{\mathfrak{N}\sum_n\Omega_t{(n)}}\approx \frac{\Omega_t^*(n^*)n_i^*}{\mathfrak{N}\Omega_t^*(n^*)}=\frac{n_j^*}{\mathfrak{N}}$$
+
+where $n_i^*$ is the value of $n_i$ in the most probable distribution $n^*$.
+
+Find the distribution $n^*$ which gives the largest $\Omega_t$ (Method of Lagrange multipliters)
+
+$$\frac{\partial}{\partial n_i}[\ln\Omega_t(n)-\alpha\sum_in_i-\beta E_i]=0$$
+
+$$\Rightarrow\ln\mathfrak{N}+1-\ln n_i-1-\alpha-\beta E_i=0$$
+
+$$\Rightarrow P_i=\frac{n_i}{\mathfrak{N}}=e^{-\alpha}e^{-\beta E_i}$$
+
+where $e^{-\alpha}$ is just a normalized constant.
+
+def $$Z=e^{-\alpha}=\sum_ie^{-\beta E_i}$$
+
+where $Z$ is the canonical partition function. 
+
+### Ex. 1 Harmonic oscillators
+
+$$H(p_i,q_i)=\frac{p_i^2}{2m}+\frac{1}{2}kq_i^2$$
+
+For the single-oscillator partition function,
+
+$$Z_1(\beta)=\int\int e^{-\beta\frac{p^2}{2m}}e^{-\beta\frac{kq^2}{2}}\mathrm{d}p\mathrm{d}q=\frac{1}{h}\sqrt{\frac{2\pi m}{\beta}}\sqrt{\frac{2\pi}{\beta k}}=\frac{1}{\hbar\omega\beta}=\frac{k_BT}{\hbar\omega}$$
+
+where $\omega=\sqrt{\frac{k}{m}}$.
+
+$$\Rightarrow\ln Z_1=-\ln\beta+const.$$
+$$\langle E_1\rangle=-\frac{\ln Z_1}{\partial\beta}=\frac{1}{\beta}=k_BT$$
+
+The partition function of the $N$-oscillators system is 
+
+$$Z_N(\beta)=[Z_1(\beta)]^N=(\frac{1}{\hbar\omega\beta})^N=(\frac{k_BT}{\hbar\omega})^N$$
+
+Assuming that hte oscillators arre distinguishable.
+
+$$\ln Z_N=-N\ln\beta+const.$$
+
+$$\langle E\rangle=Nk_BT$$
+
+Quantum Harmonic oscillators
+
+The energy eigenvalues of a 1-D harmonic oscillator are given by 
+
+$$E_n=(n+\frac{1}{2})\hbar\omega$$
+
+The single-oscillator partition function
+
+$$Z_1(\beta)=\sum_{n=0}^{\infty}e^{-\beta(n+\frac{1}{2})\hbar\omega}=\frac{e^{-\frac{1}{2}\beta\hbar\omega}}{1-e^{-\beta\hbar\omega}}$$
+
+$$\ln Z_1(\beta)=-\frac{1}{2}\beta\hbar\omega-\ln(1-e^{-\beta\hbar\omega})$$
+
+$$\langle E\rangle=-\frac{\partial\ln Z_1}{\partial\beta}=\frac{1}{2}\hbar\omega+\frac{\hbar\omega}{e^{\beta\hbar\omega}-1}$$
+
+At high T, $\beta\ll 1$, $\beta\hbar\omega\ll 1$$,
+
+$$e^{\beta\hbar\omega}=1+\beta\hbar\omega$$
+
+$$E=\frac{\hbar\omega}{2}+k_BT$$
+
+At low T, $\beta\gg 1$, $\beta\hbar\omega\gg 1$,
+
+$$e^{\beta\hbar\omega}-1\approx e^{\beta\hbar\omega}$$
+
+$$E=\frac{\hbar\omega}{2}+\hbar\omega e^{-\beta\hbar\omega}$$
+
+### Ex. 2 Ideal gas
+
+$$H=\sum_{i=1}^{N}\frac{\vec{p}_i^2}{2m}$$
+$$Z=\int_{\infty}^{\infty}\mathrm{d}^{3N}q\mathrm{d}^{3N}pe^{-\beta\sum_{i=1}^{3N}\frac{P_i^2}{2m}}=\frac{V^N}{h^{3N}N!}(\frac{2\pi m}{\beta})^{3N/2}$$
+Using Stirling approximation
+
+$$N!=N^Ne^{-N}$$
+
+$$Z=(\frac{eV}{h^3N})^N(\frac{2\pi m}{\beta})^{3N/2}$$
+
+$$\ln Z=N\ln\frac{eV}{h^3N}+\frac{3}{2}N\ln\frac{2\pi m}{\beta}=-\frac{3}{2}N\ln\beta+const.$$
+
+$$E=-\frac{\partial\ln Z}{\partial\beta}=\frac{3}{2}N\frac{1}{\beta}=\frac{3}{2}k_BT$$
+
+def $\lambda=\frac{h}{\sqrt{2\pi mk_BT}}$
+
+$$Z=(\frac{eV}{\lambda N})^N$$
+
+$$\ln Z=N\ln V+const.$$
+$$F=-k_BT\ln Z$$
+
+$$\mathrm{d}F=-S\mathrm{d}T-P\mathrm{d}V+\mu\mathrm{d}N$$
+
+$$P=-(\frac{\partial F}{\partial V})_{T,V}=\frac{Nk_BT}{V}$$
+
+### Ex. 3 Interacting particles
+
+$$H=\sum_{i=1}^{N}\frac{\vec{p}_i}{2m}+u(\vec{q}_1,\cdots,\vec{q}_N)\approx\sum_{i=1}^{N}\frac{\vec{p}_i}{2m}+\sum_{i>j}u(|\vec{q}_i-\vec{q}_j|)$$
+$$\int\mathrm{d}^3qu(|q|)=u_0$$
+
+$$\int\mathrm{d}^3q_i\mathrm{d}^3q_ju(|q_i-q_j|)=Vu_0$$
+
+$$\begin{aligned}
+Z&=\int\frac{\mathrm{d}^3p\mathrm{d}^3q}{h^{3N}N!}e^{-\beta\sum_{i=1}^{3N}\frac{P_i^2}{2m}}e^{-\beta\sum_{i>j}u(|q_i-q_j|)}\\
+&=\frac{V^N}{h^{3N}N!}\int\mathrm{d}^{3N}pe^{-\beta\sum_{i=1}^{3N}\frac{P_i^2}{2m}}\frac{1}{V^N}\int\mathrm{d}^{3N}qe^{-\beta\sum_{i>j}u(|q_i-q_j|)}\\
+&=Z_0\int\frac{\mathrm{d}^{3N}q}{V^N}[1-\sum_{i>j}u(|q_i-q_j|)]\\
+&=Z_0[1-\frac{N(N-1)\beta}{2}\frac{\int\mathrm{d}^{3N}qu(|q_i-q_j|)}{V^N}]\\
+&=Z_0[1-\frac{N(N-1)\beta}{2}\frac{\int\mathrm{d}^3q_1\mathrm{d}^3q_2u(|q_i-q_j|)}{V^2}]\\
+&=Z_0[1-\frac{\beta N^2u_0}{2V}]
+\end{aligned}
+$$
+
+$$\ln Z=\ln Z_0+\ln(1-\frac{\beta N^2u_0}{2V})=\ln Z_0-\frac{\beta N^2u_0}{2V}$$
+$$E=-\frac{\partial\ln Z}{\beta}=\frac{3}{2}Nk_BT+\frac{N^2u_0}{2V}$$
+
+$$P=\frac{Nk_BT}{V}-\frac{N^2u_0}{2V}$$
+
+
+
+**References**
+
+Terrell L. Hill. *An introduction to statistical thermodynamics*. Dover Publications, 1986.
+
+R. K. Pathria and Paul D. Beale. *Statistical Mechanics* (Third Edition). 2011.

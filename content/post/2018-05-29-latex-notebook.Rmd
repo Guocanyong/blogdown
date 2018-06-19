@@ -40,12 +40,23 @@ $\mathscr{L}$
 \mathscr{L}
 ``
 
+$\mathfrak{N}$
+``
+\mathfrak{N}
+``
+
 $\mathrm{d}x$
 ``
 \mathrm{d}x
+``
+
+$\nabla$
+``
+\nabla
 ``
 
 $\frac{x}{2}\bigg\rvert_a^b$
 ``
 \frac{x}{2}\bigg\rvert_a^b
 ``
+
